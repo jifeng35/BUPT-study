@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="algorithm">
-				<Option output="C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug/algorithm.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug"/>
+				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/algorithm.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
@@ -33,15 +33,15 @@
 					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 algorithm"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 algorithm"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="algorithm/fast">
-				<Option output="C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug/algorithm.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug"/>
+				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/algorithm.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
@@ -55,40 +55,40 @@
 					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 algorithm/fast"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 algorithm/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/lee/CLionProjects/algorithm exp/BinaryTree.cpp">
+		<Unit filename="E:/BUPT-study/algorithm exp/BinaryTree.cpp">
 			<Option target="algorithm"/>
 		</Unit>
-		<Unit filename="C:/Users/lee/CLionProjects/algorithm exp/exp.h">
+		<Unit filename="E:/BUPT-study/algorithm exp/exp.h">
 			<Option target="algorithm"/>
 		</Unit>
-		<Unit filename="C:/Users/lee/CLionProjects/algorithm exp/CMakeLists.txt">
+		<Unit filename="E:/BUPT-study/algorithm exp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

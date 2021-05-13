@@ -47,10 +47,10 @@ RM = "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\lee\CLionProjects\algorithm exp"
+CMAKE_SOURCE_DIR = "E:\BUPT-study\algorithm exp"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug"
+CMAKE_BINARY_DIR = "E:\BUPT-study\algorithm exp\cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -77,14 +77,14 @@ clean: CMakeFiles\algorithm.dir\clean
 CMakeFiles\algorithm.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target algorithm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target algorithm"
 .PHONY : CMakeFiles\algorithm.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\algorithm.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\lee\CLionProjects\algorithm exp\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles\algorithm.dir\rule
 
 # Convenience name for target.

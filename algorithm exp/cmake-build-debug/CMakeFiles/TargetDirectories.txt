@@ -1,3 +1,3 @@
-C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug/CMakeFiles/algorithm.dir
-C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/lee/CLionProjects/algorithm exp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/algorithm.dir
+E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
