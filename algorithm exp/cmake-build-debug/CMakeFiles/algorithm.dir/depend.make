@@ -4,6 +4,3 @@
 CMakeFiles\algorithm.dir\BinaryTree.cpp.obj: ..\BinaryTree.cpp
 CMakeFiles\algorithm.dir\BinaryTree.cpp.obj: ..\exp.h
 
-CMakeFiles\algorithm.dir\Huffman_Coding.cpp.obj: ..\Huffman_Coding.cpp
-CMakeFiles\algorithm.dir\Huffman_Coding.cpp.obj: ..\exp.h
-

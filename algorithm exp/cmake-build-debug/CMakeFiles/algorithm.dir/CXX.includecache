@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-E:/BUPT-study/algorithm exp/BinaryTree.cpp
+C:/Users/lee/CLionProjects/algorithm exp/BinaryTree.cpp
 exp.h
-E:/BUPT-study/algorithm exp/exp.h
+C:/Users/lee/CLionProjects/algorithm exp/exp.h
 
-E:/BUPT-study/algorithm exp/exp.h
+C:/Users/lee/CLionProjects/algorithm exp/exp.h
 iostream
 -
 string
