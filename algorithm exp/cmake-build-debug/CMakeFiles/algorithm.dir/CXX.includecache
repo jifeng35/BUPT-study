@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/lee/CLionProjects/algorithm exp/BinaryTree.cpp
+exp.h
+C:/Users/lee/CLionProjects/algorithm exp/exp.h
+
+C:/Users/lee/CLionProjects/algorithm exp/exp.h
+iostream
+-
+string
+-
+vector
+-
+stack
+-
+
