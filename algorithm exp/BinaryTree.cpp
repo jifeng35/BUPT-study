@@ -137,7 +137,42 @@ public:
     }
     void Level_Traversal()
     {
-
+        //cout<<root->val<<endl;
+        queue<treenode*> temp;
+        vector<vector<char>> res;
+        vector<char> res1;
+        temp.push(root);
+        treenode* p=root;
+        int count=0;
+        while(!temp.empty())
+        {
+            queue<treenode *> next_level;
+            while(!temp.empty())
+            {
+                p = temp.front();
+                temp.pop();
+                res1.push_back(p->val);
+                if (p->left)
+                    next_level.push(p->left);
+                if (p->right)
+                    next_level.push(p->right);
+            }
+                temp=next_level;
+                res.push_back(res1);
+                res1.clear();
+        }
+        for(int i=0;i<res.size();i++)
+        {
+            for(int j=0;j<res[i].size();j++)
+            {
+                if(j==0)
+                {
+                    cout<<"Line"<<i+1<<": ";
+                }
+                cout<<res[i][j]<<" ";
+            }
+            cout<<endl;
+        }
     }
     void print(vector<char> a)
     {
@@ -156,13 +191,15 @@ private:
 };
 int main()
 {
-    tree test("12*3");
+    tree test("12*3*4**5");
     cout<<"The result of Preorder Traversal is:"<<endl;
     test.Preorder_Traversal();//前序遍历
     cout<<"The result of Inorder Traversal is:"<<endl;
     test.Inorder_Traversal();//中序遍历
     cout<<"The result of Postorder Traversal is:"<<endl;
     test.Postorder_Traversal();//后序遍历
+    cout<<"The result of Level Traversal is:"<<endl;
+    test.Level_Traversal();//层序遍历
     cout<<"The binary tree's maximum depth is "<<test.Max_Depth(test.Get_Root())<<endl;
     //int a[1] = {  };
 }
