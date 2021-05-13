@@ -24,11 +24,9 @@ public:
     void create (string s,int &pos,treenode *&root)
     {
         ++pos;
-        //treenode*ptr=root;
         root = new treenode;
         if (pos == s.size())
         {
-            //cout << "Create complete" << endl;
             root=NULL;
             return;
         }
@@ -58,21 +56,21 @@ public:
     {
         if (!ptr)
             return 0;
-        int left = maxdepth(ptr->left);
-        int right = maxdepth(ptr->right);
+        int left = Max_Depth(ptr->left);
+        int right = Max_Depth(ptr->right);
         return max(left, right) + 1;
     }
-    void Preorder_Traversal(treenode* ptr)//前序遍历
+    void Preorder_Traversal()//前序遍历
     {
-        if (!ptr)
+        if (!root)
         {
             cout << "Your tree is empty!" << endl;
             return;
         }
         stack<treenode*> temp;
-        temp.push(ptr);
+        temp.push(root);
         vector<char> res;
-        treenode* p = ptr;
+        treenode* p = root;
         while (!temp.empty())
         {
             p = temp.top();
@@ -83,17 +81,17 @@ public:
         }
         print(res);
     }
-    void Inorder_Traversal(treenode* ptr)//中序遍历
+    void Inorder_Traversal()//中序遍历
     {
-        if (!ptr)
+        if (!root)
         {
             cout << "Your tree is empty!" << endl;
             return;
         }
         stack<treenode*> temp;
-        temp.push(ptr);
+        temp.push(root);
         vector<char> res;
-        treenode* p = ptr;
+        treenode* p = root;
         while (!temp.empty())
         {
             while ((p)&&(p->left))
@@ -110,18 +108,18 @@ public:
         }
         print(res);
     }
-    void Postorder_Traversal(treenode* ptr)//后序遍历
+    void Postorder_Traversal()//后序遍历
     {
-        if (!ptr)
+        if (!root)
         {
             cout << "Your tree is empty!" << endl;
             return;
         }
         stack<treenode*> temp1;
         stack<treenode*> temp2;
-        temp1.push(ptr);
+        temp1.push(root);
         vector<char> res;
-        treenode* p = ptr;
+        treenode* p = root;
         while (!temp1.empty())
         {
             p = temp1.top();
@@ -137,6 +135,10 @@ public:
         }
         print(res);
     }
+    void Level_Traversal()
+    {
+
+    }
     void print(vector<char> a)
     {
         for (vector<char>::iterator it = a.begin(); it != a.end(); it++)
@@ -145,18 +147,23 @@ public:
         }
         cout<<endl;
     }
+    treenode* Get_Root()
+    {
+        return root;
+    }
+private:
     treenode* root;
 };
 int main()
 {
     tree test("12*3");
     cout<<"The result of Preorder Traversal is:"<<endl;
-    test.Preorder_Traversal(test.root);//前序遍历
+    test.Preorder_Traversal();//前序遍历
     cout<<"The result of Inorder Traversal is:"<<endl;
-    test.Inorder_Traversal(test.root);//中序遍历
+    test.Inorder_Traversal();//中序遍历
     cout<<"The result of Postorder Traversal is:"<<endl;
-    test.Postorder_Traversal(test.root);//后序遍历
-    cout<<"The binary tree's maximum depth is "<<test.Max_Depth(test.root)<<endl;
+    test.Postorder_Traversal();//后序遍历
+    cout<<"The binary tree's maximum depth is "<<test.Max_Depth(test.Get_Root())<<endl;
     //int a[1] = {  };
 }
 //
