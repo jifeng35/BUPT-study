@@ -54,7 +54,7 @@ public:
         delete root;
         cout<<"The binary tree you have just built has been ruined!"<<endl;
     }
-    int maxdepth(treenode* ptr)//返回最大深度
+    int Max_Depth(treenode* ptr)//返回最大深度
     {
         if (!ptr)
             return 0;
@@ -62,7 +62,7 @@ public:
         int right = maxdepth(ptr->right);
         return max(left, right) + 1;
     }
-    void preordertraversal(treenode* ptr)//前序遍历
+    void Preorder_Traversal(treenode* ptr)//前序遍历
     {
         if (!ptr)
         {
@@ -83,7 +83,7 @@ public:
         }
         print(res);
     }
-    void inordertraversal(treenode* ptr)//中序遍历
+    void Inorder_Traversal(treenode* ptr)//中序遍历
     {
         if (!ptr)
         {
@@ -110,7 +110,7 @@ public:
         }
         print(res);
     }
-    void postordertraversal(treenode* ptr)//后序遍历
+    void Postorder_Traversal(treenode* ptr)//后序遍历
     {
         if (!ptr)
         {
@@ -150,14 +150,13 @@ public:
 int main()
 {
     tree test("12*3");
-    //cout << test.root->val<<endl;
-    cout<<"The result of preordertraversal is:"<<endl;
-    test.preordertraversal(test.root);//前序遍历
-    cout<<"The result of inordertraversal is:"<<endl;
-    test.inordertraversal(test.root);//中序遍历
-    cout<<"The result of postordertraversal is:"<<endl;
-    test.postordertraversal(test.root);//后序遍历
-    cout<<"The binary tree's maximum depth is "<<test.maxdepth(test.root)<<endl;
+    cout<<"The result of Preorder Traversal is:"<<endl;
+    test.Preorder_Traversal(test.root);//前序遍历
+    cout<<"The result of Inorder Traversal is:"<<endl;
+    test.Inorder_Traversal(test.root);//中序遍历
+    cout<<"The result of Postorder Traversal is:"<<endl;
+    test.Postorder_Traversal(test.root);//后序遍历
+    cout<<"The binary tree's maximum depth is "<<test.Max_Depth(test.root)<<endl;
     //int a[1] = {  };
 }
 //
