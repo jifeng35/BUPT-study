@@ -153,6 +153,33 @@ BinaryTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\BinaryTree.cpp.s
 .PHONY : BinaryTree.cpp.s
 
+Huffman_Coding.obj: Huffman_Coding.cpp.obj
+
+.PHONY : Huffman_Coding.obj
+
+# target to build an object file
+Huffman_Coding.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.obj
+.PHONY : Huffman_Coding.cpp.obj
+
+Huffman_Coding.i: Huffman_Coding.cpp.i
+
+.PHONY : Huffman_Coding.i
+
+# target to preprocess a source file
+Huffman_Coding.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.i
+.PHONY : Huffman_Coding.cpp.i
+
+Huffman_Coding.s: Huffman_Coding.cpp.s
+
+.PHONY : Huffman_Coding.s
+
+# target to generate assembly for a file
+Huffman_Coding.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.s
+.PHONY : Huffman_Coding.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -165,6 +192,9 @@ help:
 	@echo ... BinaryTree.obj
 	@echo ... BinaryTree.i
 	@echo ... BinaryTree.s
+	@echo ... Huffman_Coding.obj
+	@echo ... Huffman_Coding.i
+	@echo ... Huffman_Coding.s
 .PHONY : help
 
 

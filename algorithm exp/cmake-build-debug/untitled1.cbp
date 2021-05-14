@@ -85,6 +85,9 @@
 		<Unit filename="E:/BUPT-study/algorithm exp/BinaryTree.cpp">
 			<Option target="algorithm"/>
 		</Unit>
+		<Unit filename="E:/BUPT-study/algorithm exp/Huffman_Coding.cpp">
+			<Option target="algorithm"/>
+		</Unit>
 		<Unit filename="E:/BUPT-study/algorithm exp/exp.h">
 			<Option target="algorithm"/>
 		</Unit>
