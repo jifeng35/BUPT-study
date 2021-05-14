@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/algorithm.dir/BinaryTree.cpp.obj"
   "CMakeFiles/algorithm.dir/Huffman_Coding.cpp.obj"
   "algorithm.exe"
   "algorithm.exe.manifest"

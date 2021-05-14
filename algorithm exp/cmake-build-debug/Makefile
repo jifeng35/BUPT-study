@@ -126,33 +126,6 @@ algorithm\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\build
 .PHONY : algorithm\fast
 
-BinaryTree.obj: BinaryTree.cpp.obj
-
-.PHONY : BinaryTree.obj
-
-# target to build an object file
-BinaryTree.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\BinaryTree.cpp.obj
-.PHONY : BinaryTree.cpp.obj
-
-BinaryTree.i: BinaryTree.cpp.i
-
-.PHONY : BinaryTree.i
-
-# target to preprocess a source file
-BinaryTree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\BinaryTree.cpp.i
-.PHONY : BinaryTree.cpp.i
-
-BinaryTree.s: BinaryTree.cpp.s
-
-.PHONY : BinaryTree.s
-
-# target to generate assembly for a file
-BinaryTree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\BinaryTree.cpp.s
-.PHONY : BinaryTree.cpp.s
-
 Huffman_Coding.obj: Huffman_Coding.cpp.obj
 
 .PHONY : Huffman_Coding.obj
@@ -189,9 +162,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... algorithm
-	@echo ... BinaryTree.obj
-	@echo ... BinaryTree.i
-	@echo ... BinaryTree.s
 	@echo ... Huffman_Coding.obj
 	@echo ... Huffman_Coding.i
 	@echo ... Huffman_Coding.s

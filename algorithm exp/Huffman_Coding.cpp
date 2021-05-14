@@ -17,14 +17,26 @@ public:
             {
                 if (t[t.size() - 2] != '*' && t[t.size() - 4] != '*') {
                     Creat_NewTree(t);
+                    Update(t);
                 } else {
                     Insert_Node(t);
+                    Update(t);
                 }
             }
         }
         void Update(string &s)
         {
-
+                s.erase('*');
+                s.erase(s.find('*',0)+1);
+                int temp=int(s[s.find('*',0)+1]);
+                for(int i=1;i<s.size();i++,i++)
+                {
+                    if(int(s[i])>=temp)
+                    {
+                        s.insert(i,1,'*');
+                        s.insert(i+1,1,temp+48);
+                    }
+                }
         }
         void Creat_NewTree(string &s)
         {//所含有字符的总数,s这个字符串应为N*("字符"+"权重")构成
@@ -119,4 +131,9 @@ public:
 private:
     Huffman_Node*root;
 };
+int main()
+{
+    HuffMan test("we will we will r u");
+    Huffman_Node* ptr=test.Get_Root();
+}
 
