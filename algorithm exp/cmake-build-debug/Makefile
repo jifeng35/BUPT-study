@@ -59,17 +59,6 @@ CMAKE_BINARY_DIR = "E:\BUPT-study\algorithm exp\cmake-build-debug"
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	echo >nul && "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache\fast: edit_cache
-
-.PHONY : edit_cache\fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -80,6 +69,17 @@ rebuild_cache:
 rebuild_cache\fast: rebuild_cache
 
 .PHONY : rebuild_cache\fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	echo >nul && "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache\fast: edit_cache
+
+.PHONY : edit_cache\fast
 
 # The main all target
 all: cmake_check_build_system
@@ -126,6 +126,59 @@ algorithm\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\build
 .PHONY : algorithm\fast
 
+#=============================================================================
+# Target rules for targets named BinaryTree
+
+# Build rule for target.
+BinaryTree: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) BinaryTree
+.PHONY : BinaryTree
+
+# fast build rule for target.
+BinaryTree\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\build
+.PHONY : BinaryTree\fast
+
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) test
+.PHONY : test
+
+# fast build rule for target.
+test\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\build
+.PHONY : test\fast
+
+BinaryTree.obj: BinaryTree.cpp.obj
+
+.PHONY : BinaryTree.obj
+
+# target to build an object file
+BinaryTree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\BinaryTree.cpp.obj
+.PHONY : BinaryTree.cpp.obj
+
+BinaryTree.i: BinaryTree.cpp.i
+
+.PHONY : BinaryTree.i
+
+# target to preprocess a source file
+BinaryTree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\BinaryTree.cpp.i
+.PHONY : BinaryTree.cpp.i
+
+BinaryTree.s: BinaryTree.cpp.s
+
+.PHONY : BinaryTree.s
+
+# target to generate assembly for a file
+BinaryTree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\BinaryTree.cpp.s
+.PHONY : BinaryTree.cpp.s
+
 Huffman_Coding.obj: Huffman_Coding.cpp.obj
 
 .PHONY : Huffman_Coding.obj
@@ -153,6 +206,33 @@ Huffman_Coding.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.s
 .PHONY : Huffman_Coding.cpp.s
 
+test.obj: test.cpp.obj
+
+.PHONY : test.obj
+
+# target to build an object file
+test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\test.cpp.obj
+.PHONY : test.cpp.obj
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,10 +241,18 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... BinaryTree
 	@echo ... algorithm
+	@echo ... test
+	@echo ... BinaryTree.obj
+	@echo ... BinaryTree.i
+	@echo ... BinaryTree.s
 	@echo ... Huffman_Coding.obj
 	@echo ... Huffman_Coding.i
 	@echo ... Huffman_Coding.s
+	@echo ... test.obj
+	@echo ... test.i
+	@echo ... test.s
 .PHONY : help
 
 

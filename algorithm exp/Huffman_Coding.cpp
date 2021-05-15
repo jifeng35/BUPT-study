@@ -12,117 +12,61 @@ class HuffMan{
 public:
         HuffMan(string s)
         {
-            string t=get_time(s);
-           while(s.size()==2&&s[0]=='*')
-            {
-                if (t[t.size() - 2] != '*' && t[t.size() - 4] != '*') {
-                    Creat_NewTree(t);
-                    Update(t);
-                } else {
-                    Insert_Node(t);
-                    Update(t);
-                }
-            }
+            map<int,char> t=get_time(s);
+           if()
         }
-        void Update(string &s)
-        {
-                s.erase('*');
-                s.erase(s.find('*',0)+1);
-                int temp=int(s[s.find('*',0)+1]);
-                for(int i=1;i<s.size();i++,i++)
-                {
-                    if(int(s[i])>=temp)
-                    {
-                        s.insert(i,1,'*');
-                        s.insert(i+1,1,temp+48);
-                    }
-                }
-        }
-        void Creat_NewTree(string &s)
+        void Creat_NewTree(map<int,char> &s)
         {//所含有字符的总数,s这个字符串应为N*("字符"+"权重")构成
             Huffman_Node*ptr=new Huffman_Node;
             ptr->left=new Huffman_Node;
             ptr->right=new Huffman_Node;
             ptr->left->right=ptr->left->left=ptr->right->left=ptr->right->right=NULL;
-            ptr->left->data=s[s.size()-2];
-            ptr->left->Heavy_Weight=int(s[s.size()-1]);
-            s.pop_back();s.pop_back();
-            ptr->right->data=s[s.size()-2];
-            ptr->right->Heavy_Weight=int(s[s.size()-1]);
+            map<int,char>::iterator it =s.begin();
+            ptr->right->Heavy_Weight=it->first;
+            ptr->right->Heavy_Weight=it->second;
+            s.erase(it->first);
+            ptr->left->Heavy_Weight=it->first;
+            ptr->left->Heavy_Weight=it->second;
             ptr->Heavy_Weight= ptr->left->Heavy_Weight+ ptr->right->Heavy_Weight;
-            s.pop_back();s.pop_back();
-            s.push_back('*');
-            s.push_back(ptr->Heavy_Weight+48);
+            s.insert(pair<int,char>(ptr->Heavy_Weight,'*'));
             root=ptr;
         }
-        void Insert_Node(string &s)
+        void Insert_Node(map<int,char> &s)
         {
             Huffman_Node*ptr=new Huffman_Node;
-            if(s[s.size()-2]=='*') {
+            map<int,char>::iterator it =s.begin();
+            if(it->second=='*') {
                 ptr->right = new Huffman_Node;
                 ptr->right->data = s[s.size() - 4];
                 ptr->right->Heavy_Weight=int(s[s.size()-3]);
                 ptr->right->left=ptr->right->right=NULL;
-                s.pop_back();s.pop_back();
                 ptr->left= root;
                 ptr->Heavy_Weight= ptr->left->Heavy_Weight+ ptr->right->Heavy_Weight;
-                s.pop_back();s.pop_back();
-                s.push_back('*');
-                s.push_back(ptr->Heavy_Weight+48);
             }
-                else if(s[s.size()-4]=='*')
+                else if((it++)->second=='*')
             {
                 ptr->left = new Huffman_Node;
                 ptr->left->data = s[s.size() - 2];
                 ptr->left->Heavy_Weight=int(s[s.size()-1]);
                 ptr->left->right=ptr->left->left=NULL;
-                s.pop_back();s.pop_back();
                 ptr->right= root;
                 ptr->Heavy_Weight= ptr->left->Heavy_Weight+ ptr->right->Heavy_Weight;
-                s.pop_back();s.pop_back();
-                s.push_back('*');
-                s.push_back(ptr->Heavy_Weight+48);
             }
             root=ptr;
         }
-        string get_time(string s)
+        map<int,char> get_time(string s)
         {
-            vector<int> count(100,0);
-            vector<char> container(100,'*');
-            for(char t:s)
-            {
-                for(int i=0;i<100;i++)
-                {
-                    if(container[i]==t)
-                    {
-                        count[i]++;
-                        break;
-                    }
-                    else if(container[i]=='*')
-                    {
-                        container[i]=t;
-                        count[i]++;
-                        break;
-                    }
-                }
-            }
-            vector<int> temp=count;
-            string res;
-            sort(temp.begin(),temp.end());
-            reverse(temp.begin(),temp.end());
-            while(!temp.empty())
-            {
-                for(int i=0;i<100;i++)
-                {
-                    if(temp[temp.size()-1]==count[i])
-                    {
-                        res.push_back(container[i]);
-                        res.push_back(temp[temp.size()-1]+48);
-                        temp.pop_back();
-                    }
-                }
-            }
-            return res;
+           map<char,int> temp;
+           map<int,char> res;
+           for(char t:s)
+           {
+                   temp[t]++;
+           }
+           for(map<char,int>::iterator it=temp.begin();it!=temp.end();it++)
+           {
+               res[it->second]=it->first;
+           }
+           return res;
         }
         Huffman_Node* Get_Root()
         {
