@@ -28,6 +28,8 @@ int main()
     cout<<it->first<<" "<<it->second<<endl;
     it++;
     cout<<it->first<<" "<<it->second<<endl;
+    if(test.find('!')==test.end())
+        cout<<endl;
     //cout<<test.size();
 }
 

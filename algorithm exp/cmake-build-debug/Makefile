@@ -152,6 +152,19 @@ test\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\build
 .PHONY : test\fast
 
+#=============================================================================
+# Target rules for targets named huffman_tree
+
+# Build rule for target.
+huffman_tree: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) huffman_tree
+.PHONY : huffman_tree
+
+# fast build rule for target.
+huffman_tree\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\build
+.PHONY : huffman_tree\fast
+
 BinaryTree.obj: BinaryTree.cpp.obj
 
 .PHONY : BinaryTree.obj
@@ -206,6 +219,33 @@ Huffman_Coding.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.s
 .PHONY : Huffman_Coding.cpp.s
 
+huffman_tree.obj: huffman_tree.cpp.obj
+
+.PHONY : huffman_tree.obj
+
+# target to build an object file
+huffman_tree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\huffman_tree.cpp.obj
+.PHONY : huffman_tree.cpp.obj
+
+huffman_tree.i: huffman_tree.cpp.i
+
+.PHONY : huffman_tree.i
+
+# target to preprocess a source file
+huffman_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\huffman_tree.cpp.i
+.PHONY : huffman_tree.cpp.i
+
+huffman_tree.s: huffman_tree.cpp.s
+
+.PHONY : huffman_tree.s
+
+# target to generate assembly for a file
+huffman_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\huffman_tree.cpp.s
+.PHONY : huffman_tree.cpp.s
+
 test.obj: test.cpp.obj
 
 .PHONY : test.obj
@@ -243,6 +283,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... BinaryTree
 	@echo ... algorithm
+	@echo ... huffman_tree
 	@echo ... test
 	@echo ... BinaryTree.obj
 	@echo ... BinaryTree.i
@@ -250,6 +291,9 @@ help:
 	@echo ... Huffman_Coding.obj
 	@echo ... Huffman_Coding.i
 	@echo ... Huffman_Coding.s
+	@echo ... huffman_tree.obj
+	@echo ... huffman_tree.i
+	@echo ... huffman_tree.s
 	@echo ... test.obj
 	@echo ... test.i
 	@echo ... test.s
