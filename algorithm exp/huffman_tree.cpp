@@ -23,7 +23,7 @@ public:
     void Create(vector<int> t,int n,vector<char> name);
     void Create_Code_Table();
     void Encode(string s,string &d);
-    void Decode(char*s,char*d);
+    void Decode(string s,string &d);
 
     //~Huffman();
 };
@@ -44,6 +44,8 @@ void Huffman::Create(vector<int> t,int n,vector<char> name){
             root[i].left=x;
             root[i].right=y;
             root[i].mother=-1;
+            x+=2;
+            y+=2;
         }
     }
 void Huffman::code(int i,string New_Code)
@@ -58,19 +60,19 @@ void Huffman::code(int i,string New_Code)
 void Huffman::Create_Code_Table() {
     code(2*N-2,"");
 }
-void Huffman::Decode(char*s,char*d){
-    while(*s!='\0'){
+void Huffman::Decode(string s,string &d){
+    int i=0;
+    while(i!=s.size()){
         int parent =2*N-2;
         while(root[parent].left!=-1)
         {
-            if(*s=='0')
+            if(s[i]=='0')
                 parent=root[parent].left;
             else
                 parent=root[parent].right;
-            s++;
+            i++;
         }
-        *d=list[parent].data;
-        d++;
+        d+=list[parent].data;
     }
 }
 void Huffman::Encode(string s,string &d)
@@ -127,6 +129,9 @@ int main(){
     string d1;
     test.Encode(s,d1);
     cout<<d1<<endl;
+    s.clear();
+    test.Decode(d1,s);
+    cout<<s<<endl;
     //test
 
 }
