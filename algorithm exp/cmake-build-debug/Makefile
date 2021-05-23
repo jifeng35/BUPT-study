@@ -140,6 +140,19 @@ BinaryTree\fast:
 .PHONY : BinaryTree\fast
 
 #=============================================================================
+# Target rules for targets named graph
+
+# Build rule for target.
+graph: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) graph
+.PHONY : graph
+
+# fast build rule for target.
+graph\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\build
+.PHONY : graph\fast
+
+#=============================================================================
 # Target rules for targets named huffman_tree
 
 # Build rule for target.
@@ -206,6 +219,33 @@ Huffman_Coding.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.s
 .PHONY : Huffman_Coding.cpp.s
 
+graph.obj: graph.cpp.obj
+
+.PHONY : graph.obj
+
+# target to build an object file
+graph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\graph.cpp.obj
+.PHONY : graph.cpp.obj
+
+graph.i: graph.cpp.i
+
+.PHONY : graph.i
+
+# target to preprocess a source file
+graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\graph.cpp.i
+.PHONY : graph.cpp.i
+
+graph.s: graph.cpp.s
+
+.PHONY : graph.s
+
+# target to generate assembly for a file
+graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\graph.cpp.s
+.PHONY : graph.cpp.s
+
 huffman_tree.obj: huffman_tree.cpp.obj
 
 .PHONY : huffman_tree.obj
@@ -243,6 +283,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... BinaryTree
 	@echo ... algorithm
+	@echo ... graph
 	@echo ... huffman_tree
 	@echo ... BinaryTree.obj
 	@echo ... BinaryTree.i
@@ -250,6 +291,9 @@ help:
 	@echo ... Huffman_Coding.obj
 	@echo ... Huffman_Coding.i
 	@echo ... Huffman_Coding.s
+	@echo ... graph.obj
+	@echo ... graph.i
+	@echo ... graph.s
 	@echo ... huffman_tree.obj
 	@echo ... huffman_tree.i
 	@echo ... huffman_tree.s

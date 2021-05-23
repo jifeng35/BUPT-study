@@ -105,6 +105,50 @@
 					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="graph">
+				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/graph.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 graph"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph/fast">
+				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/graph.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 graph/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="huffman_tree">
 				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/huffman_tree.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
@@ -176,8 +220,14 @@
 		<Unit filename="E:/BUPT-study/algorithm exp/Huffman_Coding.cpp">
 			<Option target="algorithm"/>
 		</Unit>
+		<Unit filename="E:/BUPT-study/algorithm exp/algraph.h">
+			<Option target="graph"/>
+		</Unit>
 		<Unit filename="E:/BUPT-study/algorithm exp/exp.h">
 			<Option target="algorithm"/>
+		</Unit>
+		<Unit filename="E:/BUPT-study/algorithm exp/graph.cpp">
+			<Option target="graph"/>
 		</Unit>
 		<Unit filename="E:/BUPT-study/algorithm exp/huffman_tree.cpp">
 			<Option target="huffman_tree"/>

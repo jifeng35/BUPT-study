@@ -58,6 +58,7 @@ CMAKE_BINARY_DIR = "E:\BUPT-study\algorithm exp\cmake-build-debug"
 # The main recursive "all" target.
 all: CMakeFiles\algorithm.dir\all
 all: CMakeFiles\BinaryTree.dir\all
+all: CMakeFiles\graph.dir\all
 all: CMakeFiles\huffman_tree.dir\all
 
 .PHONY : all
@@ -70,6 +71,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles\algorithm.dir\clean
 clean: CMakeFiles\BinaryTree.dir\clean
+clean: CMakeFiles\graph.dir\clean
 clean: CMakeFiles\huffman_tree.dir\clean
 
 .PHONY : clean
@@ -129,13 +131,40 @@ CMakeFiles\BinaryTree.dir\clean:
 .PHONY : CMakeFiles\BinaryTree.dir\clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/graph.dir
+
+# All Build rule for target.
+CMakeFiles\graph.dir\all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target graph"
+.PHONY : CMakeFiles\graph.dir\all
+
+# Build rule for subdir invocation for target.
+CMakeFiles\graph.dir\rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\all
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles\graph.dir\rule
+
+# Convenience name for target.
+graph: CMakeFiles\graph.dir\rule
+
+.PHONY : graph
+
+# clean rule for target.
+CMakeFiles\graph.dir\clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\clean
+.PHONY : CMakeFiles\graph.dir\clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/huffman_tree.dir
 
 # All Build rule for target.
 CMakeFiles\huffman_tree.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target huffman_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=7,8 "Built target huffman_tree"
 .PHONY : CMakeFiles\huffman_tree.dir\all
 
 # Build rule for subdir invocation for target.
