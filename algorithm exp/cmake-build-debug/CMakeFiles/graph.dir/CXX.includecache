@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/BUPT-study/algorithm exp/algraph.h
+exp.h
+E:/BUPT-study/algorithm exp/exp.h
+
+E:/BUPT-study/algorithm exp/exp.h
+iostream
+-
+string
+-
+vector
+-
+stack
+-
+queue
+-
+map
+-
+fstream
+-
+
+E:/BUPT-study/algorithm exp/graph.cpp
+algraph.h
+E:/BUPT-study/algorithm exp/algraph.h
+

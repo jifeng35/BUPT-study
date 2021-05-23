@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/BUPT-study/algorithm exp/exp.h
+iostream
+-
+string
+-
+vector
+-
+stack
+-
+queue
+-
+map
+-
+
+E:/BUPT-study/algorithm exp/huffman_tree.cpp
+exp.h
+E:/BUPT-study/algorithm exp/exp.h
+
