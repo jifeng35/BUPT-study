@@ -2,16 +2,16 @@
 // Created by lee on 2021/5/19.
 //
 #include"algraph.h"
-template<class T>ALGraph<T>::ALGraph(ifstream &fin){
-    fin>>vNum;
-    fin>>arcNum;
+template<class T>ALGraph<T>::ALGraph(){
+    cin>>vNum;
+    cin>>arcNum;
     for(int k=0;k<vNum;k++){
-        fin>>adjlist[k].vertex;
+        cin>>adjlist[k].vertex;
         adjlist[k].firstarc=NULL;
     }
     for(int k=0;k<arcNum;k++){
         int i,j;
-        fin>>i>>j;
+        cin>>i>>j;
         ArcNode*s=new ArcNode;
         s->adjvex =j;
         s->nextarc=adjlist[i].firstarc;
@@ -23,5 +23,7 @@ template<class T>ALGraph<T>::ALGraph(ifstream &fin){
 }
 int main()
 {
-    cout<<1<<endl;
+    ALGraph<char> test();
+
+    cout<<1;
 }

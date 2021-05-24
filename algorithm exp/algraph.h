@@ -16,7 +16,7 @@ struct VertexNode{
 };
 template<class T>class ALGraph{
 public:
-    ALGraph(ifstream &fin);
+    ALGraph();
     void DFS(int v){
         cout<<adjlist[v].vertex;
         visited[v]=1;
@@ -26,6 +26,26 @@ public:
             if(visited[j]==0)
                 DFS(j);
             p=p->nextarc;
+        }
+        reset();
+    }
+    void DFS(int v,bool useless)
+    {
+        stack<VertexNode> temp;
+        temp.push(adjlist[v]);
+        visited[v]=1;
+        while(!temp.empty()){
+            ArcNode*p=temp.top().firstarc;
+            int j = p->adjvex;
+           do{
+                if (visited[j] == 0)
+                {
+                    temp.push(adjlist[j]);
+                    visited[j]=1;
+                }
+                p = p->nextarc;
+            }while(adjlist[j].firstarc!=p);
+            temp.pop();
         }
         reset();
     }
@@ -55,7 +75,18 @@ public:
             visited[i]=false;
         }
     }
-    ~ALGraph();
+    ~ALGraph(){
+        int i=0;
+        while(i<vNum){
+            ArcNode*p=adjlist[i++].firstarc;
+            while(p)
+            {
+                ArcNode*q=p->nextarc;
+                delete p;
+                p=q;
+            }
+        }
+    }
 private:
     VertexNode adjlist[MAXSIZE];//接点
     int vNum,arcNum;//顶点数目和弧数目

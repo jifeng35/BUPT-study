@@ -52,6 +52,37 @@ public:
         delete root;
         cout<<"The binary tree you have just built has been ruined!"<<endl;
     }
+    void search(char s)
+    {
+        if(root->val==s)
+            cout<<"The char you wanna search is in the root node!"<<endl;
+        else
+        {
+            stack<treenode*> temp;
+            temp.push(root);
+            treenode*p =root;
+            vector<int> res;
+            while(!temp.empty())
+            {
+                p=temp.top();
+                temp.pop();
+                if(p->val==s)
+                {
+                    cout<<"root's ";
+                    for(int i=0;i<res.size();i++)
+                    {
+                        if(res[i])
+                            cout<<"right ";
+                        else
+                            cout<<"left ";
+                    }
+                    cout<<endl;
+                }
+                else if(p->left) { temp.push(p->left);res.emplace_back(0); }
+                else if(p->right){ temp.push(p->right);res.emplace_back(1); }
+            }
+        }
+    }
     int Max_Depth(treenode* ptr)//返回最大深度
     {
         if (!ptr)
