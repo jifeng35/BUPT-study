@@ -22,7 +22,11 @@ map
 fstream
 -
 
-E:/BUPT-study/algorithm exp/huffman_tree.cpp
+E:/BUPT-study/algorithm exp/fstar.cpp
+fstar.h
+E:/BUPT-study/algorithm exp/fstar.h
+
+E:/BUPT-study/algorithm exp/fstar.h
 exp.h
 E:/BUPT-study/algorithm exp/exp.h
 

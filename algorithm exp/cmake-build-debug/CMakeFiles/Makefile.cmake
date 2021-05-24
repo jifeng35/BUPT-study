@@ -51,4 +51,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/BinaryTree.dir/DependInfo.cmake"
   "CMakeFiles/graph.dir/DependInfo.cmake"
   "CMakeFiles/huffman_tree.dir/DependInfo.cmake"
+  "CMakeFiles/fstar.dir/DependInfo.cmake"
   )

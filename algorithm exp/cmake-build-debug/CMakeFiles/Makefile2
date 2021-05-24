@@ -60,6 +60,7 @@ all: CMakeFiles\algorithm.dir\all
 all: CMakeFiles\BinaryTree.dir\all
 all: CMakeFiles\graph.dir\all
 all: CMakeFiles\huffman_tree.dir\all
+all: CMakeFiles\fstar.dir\all
 
 .PHONY : all
 
@@ -73,6 +74,7 @@ clean: CMakeFiles\algorithm.dir\clean
 clean: CMakeFiles\BinaryTree.dir\clean
 clean: CMakeFiles\graph.dir\clean
 clean: CMakeFiles\huffman_tree.dir\clean
+clean: CMakeFiles\fstar.dir\clean
 
 .PHONY : clean
 
@@ -137,7 +139,7 @@ CMakeFiles\BinaryTree.dir\clean:
 CMakeFiles\graph.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=7,8 "Built target graph"
 .PHONY : CMakeFiles\graph.dir\all
 
 # Build rule for subdir invocation for target.
@@ -164,7 +166,7 @@ CMakeFiles\graph.dir\clean:
 CMakeFiles\huffman_tree.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=7,8 "Built target huffman_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=9,10 "Built target huffman_tree"
 .PHONY : CMakeFiles\huffman_tree.dir\all
 
 # Build rule for subdir invocation for target.
@@ -183,6 +185,33 @@ huffman_tree: CMakeFiles\huffman_tree.dir\rule
 CMakeFiles\huffman_tree.dir\clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\clean
 .PHONY : CMakeFiles\huffman_tree.dir\clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/fstar.dir
+
+# All Build rule for target.
+CMakeFiles\fstar.dir\all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target fstar"
+.PHONY : CMakeFiles\fstar.dir\all
+
+# Build rule for subdir invocation for target.
+CMakeFiles\fstar.dir\rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\all
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles\fstar.dir\rule
+
+# Convenience name for target.
+fstar: CMakeFiles\fstar.dir\rule
+
+.PHONY : fstar
+
+# clean rule for target.
+CMakeFiles\fstar.dir\clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\clean
+.PHONY : CMakeFiles\fstar.dir\clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

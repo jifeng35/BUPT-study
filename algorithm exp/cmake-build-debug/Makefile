@@ -59,17 +59,6 @@ CMAKE_BINARY_DIR = "E:\BUPT-study\algorithm exp\cmake-build-debug"
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	echo >nul && "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache\fast: edit_cache
-
-.PHONY : edit_cache\fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -80,6 +69,17 @@ rebuild_cache:
 rebuild_cache\fast: rebuild_cache
 
 .PHONY : rebuild_cache\fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	echo >nul && "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache\fast: edit_cache
+
+.PHONY : edit_cache\fast
 
 # The main all target
 all: cmake_check_build_system
@@ -165,6 +165,19 @@ huffman_tree\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\build
 .PHONY : huffman_tree\fast
 
+#=============================================================================
+# Target rules for targets named fstar
+
+# Build rule for target.
+fstar: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) fstar
+.PHONY : fstar
+
+# fast build rule for target.
+fstar\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\build
+.PHONY : fstar\fast
+
 BinaryTree.obj: BinaryTree.cpp.obj
 
 .PHONY : BinaryTree.obj
@@ -218,6 +231,33 @@ Huffman_Coding.s: Huffman_Coding.cpp.s
 Huffman_Coding.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.s
 .PHONY : Huffman_Coding.cpp.s
+
+fstar.obj: fstar.cpp.obj
+
+.PHONY : fstar.obj
+
+# target to build an object file
+fstar.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\fstar.cpp.obj
+.PHONY : fstar.cpp.obj
+
+fstar.i: fstar.cpp.i
+
+.PHONY : fstar.i
+
+# target to preprocess a source file
+fstar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\fstar.cpp.i
+.PHONY : fstar.cpp.i
+
+fstar.s: fstar.cpp.s
+
+.PHONY : fstar.s
+
+# target to generate assembly for a file
+fstar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\fstar.cpp.s
+.PHONY : fstar.cpp.s
 
 graph.obj: graph.cpp.obj
 
@@ -283,6 +323,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... BinaryTree
 	@echo ... algorithm
+	@echo ... fstar
 	@echo ... graph
 	@echo ... huffman_tree
 	@echo ... BinaryTree.obj
@@ -291,6 +332,9 @@ help:
 	@echo ... Huffman_Coding.obj
 	@echo ... Huffman_Coding.i
 	@echo ... Huffman_Coding.s
+	@echo ... fstar.obj
+	@echo ... fstar.i
+	@echo ... fstar.s
 	@echo ... graph.obj
 	@echo ... graph.i
 	@echo ... graph.s
