@@ -78,8 +78,14 @@ public:
                     }
                     cout<<endl;
                 }
-                else if(p->left) { temp.push(p->left);res.emplace_back(0); }
-                else if(p->right){ temp.push(p->right);res.emplace_back(1); }
+                    else if (p->left) {
+                        temp.push(p->left);
+                        res.emplace_back(0);
+                    }
+                    else if (p->right) {
+                        temp.push(p->right);
+                        res.emplace_back(1);
+                }
             }
         }
     }
@@ -232,6 +238,8 @@ int main()
     cout<<"The result of Level Traversal is:"<<endl;
     test.Level_Traversal();//层序遍历
     cout<<"The binary tree's maximum depth is "<<test.Max_Depth(test.Get_Root())<<endl;
+    //cout<<"The 5 is in roots";
+    test.search('');
     //int a[1] = {  };
 }
 //
