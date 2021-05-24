@@ -228,7 +228,7 @@ private:
 };
 int main()
 {
-    tree test("12*3*4**5");
+    tree test("12*3*4*");
     cout<<"The result of Preorder Traversal is:"<<endl;
     test.Preorder_Traversal();//前序遍历
     cout<<"The result of Inorder Traversal is:"<<endl;
@@ -239,7 +239,7 @@ int main()
     test.Level_Traversal();//层序遍历
     cout<<"The binary tree's maximum depth is "<<test.Max_Depth(test.Get_Root())<<endl;
     //cout<<"The 5 is in roots";
-    test.search('');
+    test.search('2');
     //int a[1] = {  };
 }
 //
