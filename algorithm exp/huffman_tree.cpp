@@ -24,7 +24,6 @@ public:
     void Create_Code_Table();
     void Encode(string s,string &d);
     void Decode(string s,string &d);
-
     //~Huffman();
 };
 void Huffman::Create(vector<int> t,int n,vector<char> name){
