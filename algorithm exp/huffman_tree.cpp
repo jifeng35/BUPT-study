@@ -99,9 +99,9 @@ multimap<int,char> get_time(string s)
 {
     map<char,int> temp;
     multimap<int,char> res;
-    for(char t:s)
+    for(int i=0;i<s.size();i++)
     {
-        temp[t]++;
+        temp[s[i]]++;
     }
     for(map<char,int>::iterator it=temp.begin();it!=temp.end();it++)
     {
@@ -109,10 +109,23 @@ multimap<int,char> get_time(string s)
     }
     return res;
 }
+string _2jz(int a)
+{
+    string temp;
+    while(a!=0)
+    {
+        a/=2;
+        temp.push_back(a%2+48);
+    }
+    temp.push_back(48);
+    return temp;
+}
 int main(){
-    cout<<"please input:"<<endl;
+    //cout<<"please input:"<<endl;
     string s;
-    cin>>s;
+    //cin>>noskipws;
+    //cin>>s;
+    s="I love data Structure, I love Computer.I will try my best to study data Structure.";
     multimap<int,char> temp;
     temp=get_time(s);
     vector<int> temp1;
@@ -128,7 +141,14 @@ int main(){
     test.Create_Code_Table();
     string d1;
     test.Encode(s,d1);
-    cout<<d1<<endl;
+    cout<<d1<<endl<<"Code by huffman the size is "<<d1.size()<<endl;
+    int size=0;
+    for(char t:s){
+        cout<<_2jz(int(t));
+        size+=(_2jz(int(t))).size();
+    }
+    cout<<endl<<"Code by ascii the size is "<<size<<endl;
+    cout<<"The compression ratio is "<<float(d1.size()*100)/float(size)<<"%"<<endl;
     s.clear();
     test.Decode(d1,s);
     cout<<s<<endl;
