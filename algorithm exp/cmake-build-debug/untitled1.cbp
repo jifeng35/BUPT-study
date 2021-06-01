@@ -61,6 +61,50 @@
 					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="fstar1">
+				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/fstar1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 fstar1"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fstar1/fast">
+				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/fstar1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 fstar1/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="BinaryTree">
 				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/BinaryTree.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
@@ -279,8 +323,14 @@
 		<Unit filename="E:/BUPT-study/algorithm exp/graph.cpp">
 			<Option target="graph"/>
 		</Unit>
+		<Unit filename="E:/BUPT-study/algorithm exp/graph.h">
+			<Option target="fstar1"/>
+		</Unit>
 		<Unit filename="E:/BUPT-study/algorithm exp/huffman_tree.cpp">
 			<Option target="huffman_tree"/>
+		</Unit>
+		<Unit filename="E:/BUPT-study/algorithm exp/地图染色.cpp">
+			<Option target="fstar1"/>
 		</Unit>
 		<Unit filename="E:/BUPT-study/algorithm exp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

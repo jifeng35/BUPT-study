@@ -127,6 +127,19 @@ algorithm\fast:
 .PHONY : algorithm\fast
 
 #=============================================================================
+# Target rules for targets named fstar1
+
+# Build rule for target.
+fstar1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) fstar1
+.PHONY : fstar1
+
+# fast build rule for target.
+fstar1\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar1.dir\build
+.PHONY : fstar1\fast
+
+#=============================================================================
 # Target rules for targets named BinaryTree
 
 # Build rule for target.
@@ -313,6 +326,33 @@ huffman_tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\huffman_tree.cpp.s
 .PHONY : huffman_tree.cpp.s
 
+地图染色.obj: 地图染色.cpp.obj
+
+.PHONY : 地图染色.obj
+
+# target to build an object file
+地图染色.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar1.dir\地图染色.cpp.obj
+.PHONY : 地图染色.cpp.obj
+
+地图染色.i: 地图染色.cpp.i
+
+.PHONY : 地图染色.i
+
+# target to preprocess a source file
+地图染色.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar1.dir\地图染色.cpp.i
+.PHONY : 地图染色.cpp.i
+
+地图染色.s: 地图染色.cpp.s
+
+.PHONY : 地图染色.s
+
+# target to generate assembly for a file
+地图染色.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar1.dir\地图染色.cpp.s
+.PHONY : 地图染色.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -324,6 +364,7 @@ help:
 	@echo ... BinaryTree
 	@echo ... algorithm
 	@echo ... fstar
+	@echo ... fstar1
 	@echo ... graph
 	@echo ... huffman_tree
 	@echo ... BinaryTree.obj
@@ -341,6 +382,9 @@ help:
 	@echo ... huffman_tree.obj
 	@echo ... huffman_tree.i
 	@echo ... huffman_tree.s
+	@echo ... 地图染色.obj
+	@echo ... 地图染色.i
+	@echo ... 地图染色.s
 .PHONY : help
 
 

@@ -1,4 +1,5 @@
 E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/algorithm.dir
+E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/fstar1.dir
 E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/BinaryTree.dir
 E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/graph.dir
 E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/huffman_tree.dir

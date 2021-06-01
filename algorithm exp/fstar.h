@@ -33,6 +33,7 @@ public:
             for(int i=0;i<temp.size();i+=3)
             {
                 Add_Edge(temp[i],temp[i+1],temp[i+2]);
+                Add_Edge(temp[i+1],temp[i],temp[i+2]);
             }
         }
     }
@@ -66,7 +67,7 @@ public:
     }
     void reset()
     {
-        visited=vector<bool>(NNode+1,false);;
+        visited=vector<bool>(MaxNum,false);;
     }
     void Add_Edge(int f,int s,int w){
         Edge[Count].to=s;
@@ -104,6 +105,7 @@ public:
         {
             int node = temp.front();
             temp.pop();
+            if(!visited[node])
             cout << node << " ";
             visited[node] = true;
             for (int j = head[node]; j != -1; j = Edge[j].next)
@@ -113,7 +115,75 @@ public:
             }
         }
     }
+    void PAINT(vector<int> &ArrColor){
+        reset();
+        int NumColor = 0;
+        for (int i = 1; i < ArrColor.size(); i++){
+            paint(ArrColor, i, NumColor);
+            cout <<"The Node which is containing "<< i << " is painted by " << char('A' + ArrColor[i]) << endl;
+        }
+    }
+    void paint(vector<int> &ArrColor, int j, int &NumColor){
+        if (visited[j])
+            return;
+        visited[j]=true;
+        vector<bool> color_use(NumColor,false);
+        for (int i=head[j];i!=-1;i=Edge[i].next){
+            int next_node=Edge[i].to;
+            if (visited[next_node])
+                color_use[ArrColor[next_node]] = true; //将这种颜色标记为true
+        }
+        bool add=true;
+        for (int i=0;i<NumColor;i++){
+            if (color_use[i]==false){// 如果没有被占用
+                ArrColor[j]=i;add=false;break;
+            }
+        }
+        if (add == true){
+            ArrColor[j]=NumColor; // 将第一种颜色标号为0
+            NumColor+=1;
+        }
+    }
+    void paint(vector<int> &colors)
+    {
+        visited = vector<bool>(MaxNum, false);
+        int color_count = 0;
+        for (int i = 1; i < colors.size(); i++)
+        {
+            _paint(colors, i, color_count);
+            cout << i << "的颜色为：" << char('A' + colors[i]) << endl;
+        }
+    }
+
+    void _paint(vector<int> &colors, int start, int &color_count)
+    {
+        if (visited[start])
+            return;
+        visited[start] = true; //更新访问记录
+        vector<bool> color_use(color_count, false);
+        for (int i = head[start]; i != -1; i = Edge[i].next)
+        {
+            int next_node = Edge[i].to;
+            if (visited[next_node])
+                color_use[colors[next_node]] = true; //将这种颜色标记为true
+        }
+        bool add = true;
+        for (int i = 0; i < color_count; i++)
+        {
+            if (color_use[i] == false) // 如果没有被占用
+            {
+                colors[start] = i;
+                add = false;
+                break;
+            }
+        }
+        if (add == true)
+        {
+            colors[start] = color_count; // 将第一种颜色标号为0
+            color_count += 1;
+        }
+    }
     ~FStar(){
-        cout<<"图已由编译器自动回收内存"<<endl;
+        cout<<"图已由编译器自动回收内存";
     }
 };

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/BUPT-study/algorithm exp/graph.h
+queue
+-
+iostream
+-
+utility
+-
+vector
+-
+string
+-
+
+E:/BUPT-study/algorithm exp/地图染色.cpp
+graph.h
+E:/BUPT-study/algorithm exp/graph.h
+

@@ -24,6 +24,5 @@ template<class T>ALGraph<T>::ALGraph(){
 int main()
 {
     ALGraph<char> test();
-
     cout<<1;
 }
