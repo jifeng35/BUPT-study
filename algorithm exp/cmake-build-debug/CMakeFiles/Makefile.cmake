@@ -47,11 +47,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/algorithm.dir/DependInfo.cmake"
-  "CMakeFiles/fstar1.dir/DependInfo.cmake"
   "CMakeFiles/BinaryTree.dir/DependInfo.cmake"
-  "CMakeFiles/graph.dir/DependInfo.cmake"
   "CMakeFiles/huffman_tree.dir/DependInfo.cmake"
-  "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/fstar.dir/DependInfo.cmake"
+  "CMakeFiles/sort.dir/DependInfo.cmake"
   )

@@ -59,17 +59,6 @@ CMAKE_BINARY_DIR = "E:\BUPT-study\algorithm exp\cmake-build-debug"
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	echo >nul && "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache\fast: edit_cache
-
-.PHONY : edit_cache\fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -80,6 +69,17 @@ rebuild_cache:
 rebuild_cache\fast: rebuild_cache
 
 .PHONY : rebuild_cache\fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	echo >nul && "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache\fast: edit_cache
+
+.PHONY : edit_cache\fast
 
 # The main all target
 all: cmake_check_build_system
@@ -114,32 +114,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named algorithm
-
-# Build rule for target.
-algorithm: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) algorithm
-.PHONY : algorithm
-
-# fast build rule for target.
-algorithm\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\build
-.PHONY : algorithm\fast
-
-#=============================================================================
-# Target rules for targets named fstar1
-
-# Build rule for target.
-fstar1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) fstar1
-.PHONY : fstar1
-
-# fast build rule for target.
-fstar1\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar1.dir\build
-.PHONY : fstar1\fast
-
-#=============================================================================
 # Target rules for targets named BinaryTree
 
 # Build rule for target.
@@ -151,19 +125,6 @@ BinaryTree: cmake_check_build_system
 BinaryTree\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\build
 .PHONY : BinaryTree\fast
-
-#=============================================================================
-# Target rules for targets named graph
-
-# Build rule for target.
-graph: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) graph
-.PHONY : graph
-
-# fast build rule for target.
-graph\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\build
-.PHONY : graph\fast
 
 #=============================================================================
 # Target rules for targets named huffman_tree
@@ -179,19 +140,6 @@ huffman_tree\fast:
 .PHONY : huffman_tree\fast
 
 #=============================================================================
-# Target rules for targets named test
-
-# Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) test
-.PHONY : test
-
-# fast build rule for target.
-test\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\build
-.PHONY : test\fast
-
-#=============================================================================
 # Target rules for targets named fstar
 
 # Build rule for target.
@@ -203,6 +151,19 @@ fstar: cmake_check_build_system
 fstar\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\build
 .PHONY : fstar\fast
+
+#=============================================================================
+# Target rules for targets named sort
+
+# Build rule for target.
+sort: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) sort
+.PHONY : sort
+
+# fast build rule for target.
+sort\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\sort.dir\build
+.PHONY : sort\fast
 
 BinaryTree.obj: BinaryTree.cpp.obj
 
@@ -231,32 +192,32 @@ BinaryTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\BinaryTree.cpp.s
 .PHONY : BinaryTree.cpp.s
 
-Huffman_Coding.obj: Huffman_Coding.cpp.obj
+Sort.obj: Sort.cpp.obj
 
-.PHONY : Huffman_Coding.obj
+.PHONY : Sort.obj
 
 # target to build an object file
-Huffman_Coding.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.obj
-.PHONY : Huffman_Coding.cpp.obj
+Sort.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\sort.dir\Sort.cpp.obj
+.PHONY : Sort.cpp.obj
 
-Huffman_Coding.i: Huffman_Coding.cpp.i
+Sort.i: Sort.cpp.i
 
-.PHONY : Huffman_Coding.i
+.PHONY : Sort.i
 
 # target to preprocess a source file
-Huffman_Coding.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.i
-.PHONY : Huffman_Coding.cpp.i
+Sort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\sort.dir\Sort.cpp.i
+.PHONY : Sort.cpp.i
 
-Huffman_Coding.s: Huffman_Coding.cpp.s
+Sort.s: Sort.cpp.s
 
-.PHONY : Huffman_Coding.s
+.PHONY : Sort.s
 
 # target to generate assembly for a file
-Huffman_Coding.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\algorithm.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\algorithm.dir\Huffman_Coding.cpp.s
-.PHONY : Huffman_Coding.cpp.s
+Sort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\sort.dir\Sort.cpp.s
+.PHONY : Sort.cpp.s
 
 fstar.obj: fstar.cpp.obj
 
@@ -285,33 +246,6 @@ fstar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\fstar.cpp.s
 .PHONY : fstar.cpp.s
 
-graph.obj: graph.cpp.obj
-
-.PHONY : graph.obj
-
-# target to build an object file
-graph.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\graph.cpp.obj
-.PHONY : graph.cpp.obj
-
-graph.i: graph.cpp.i
-
-.PHONY : graph.i
-
-# target to preprocess a source file
-graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\graph.cpp.i
-.PHONY : graph.cpp.i
-
-graph.s: graph.cpp.s
-
-.PHONY : graph.s
-
-# target to generate assembly for a file
-graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\graph.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\graph.dir\graph.cpp.s
-.PHONY : graph.cpp.s
-
 huffman_tree.obj: huffman_tree.cpp.obj
 
 .PHONY : huffman_tree.obj
@@ -339,60 +273,6 @@ huffman_tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\huffman_tree.cpp.s
 .PHONY : huffman_tree.cpp.s
 
-test01.obj: test01.cpp.obj
-
-.PHONY : test01.obj
-
-# target to build an object file
-test01.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\test01.cpp.obj
-.PHONY : test01.cpp.obj
-
-test01.i: test01.cpp.i
-
-.PHONY : test01.i
-
-# target to preprocess a source file
-test01.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\test01.cpp.i
-.PHONY : test01.cpp.i
-
-test01.s: test01.cpp.s
-
-.PHONY : test01.s
-
-# target to generate assembly for a file
-test01.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\test01.cpp.s
-.PHONY : test01.cpp.s
-
-地图染色.obj: 地图染色.cpp.obj
-
-.PHONY : 地图染色.obj
-
-# target to build an object file
-地图染色.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar1.dir\地图染色.cpp.obj
-.PHONY : 地图染色.cpp.obj
-
-地图染色.i: 地图染色.cpp.i
-
-.PHONY : 地图染色.i
-
-# target to preprocess a source file
-地图染色.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar1.dir\地图染色.cpp.i
-.PHONY : 地图染色.cpp.i
-
-地图染色.s: 地图染色.cpp.s
-
-.PHONY : 地图染色.s
-
-# target to generate assembly for a file
-地图染色.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar1.dir\地图染色.cpp.s
-.PHONY : 地图染色.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -402,33 +282,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... BinaryTree
-	@echo ... algorithm
 	@echo ... fstar
-	@echo ... fstar1
-	@echo ... graph
 	@echo ... huffman_tree
-	@echo ... test
+	@echo ... sort
 	@echo ... BinaryTree.obj
 	@echo ... BinaryTree.i
 	@echo ... BinaryTree.s
-	@echo ... Huffman_Coding.obj
-	@echo ... Huffman_Coding.i
-	@echo ... Huffman_Coding.s
+	@echo ... Sort.obj
+	@echo ... Sort.i
+	@echo ... Sort.s
 	@echo ... fstar.obj
 	@echo ... fstar.i
 	@echo ... fstar.s
-	@echo ... graph.obj
-	@echo ... graph.i
-	@echo ... graph.s
 	@echo ... huffman_tree.obj
 	@echo ... huffman_tree.i
 	@echo ... huffman_tree.s
-	@echo ... test01.obj
-	@echo ... test01.i
-	@echo ... test01.s
-	@echo ... 地图染色.obj
-	@echo ... 地图染色.i
-	@echo ... 地图染色.s
 .PHONY : help
 
 
