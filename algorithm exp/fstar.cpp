@@ -13,5 +13,5 @@ int main()
     test.DFS(2);
     test.BFS(1);
     cout<<test.Prim()<<endl;
-    test.paint(test02);
+    test.PAINT(test02);
 }

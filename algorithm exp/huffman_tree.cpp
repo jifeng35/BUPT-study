@@ -151,7 +151,5 @@ int main(){
     s.clear();
     test.Decode(d1,s);
     cout<<s<<endl;
-    //test
-
 }
 
