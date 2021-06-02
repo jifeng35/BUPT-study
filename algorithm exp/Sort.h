@@ -11,10 +11,13 @@ class my_sort{
 public:
     void Bubble(vector<int> a);
     void bubble(vector<int> a);
+    void Quick(vector<int> a);
+    void quick(vector<int> a,int low,int high);
     void print(vector<int> a);
     void print_time();
 private:
     double Bubble_Time;
+    double Quick_Time;
 };
 void my_sort::bubble(vector<int> a){
     for(int i=0;i<a.size()-1;++i){
@@ -45,4 +48,20 @@ void my_sort::Bubble(vector<int> a){
 }
 void my_sort::print_time(){
     cout<<"Bubble_Sort Time is "<<Bubble_Time<<"s"<<endl;
+}
+void my_sort::quick(vector<int> a,int low,int high){
+    if(low==high){
+        return;
+    }
+    int left=low;
+    int right=high;
+    int key=a[left];
+    while(right<left){
+            while()
+    }
+    quick(a,low,left-1);
+    quick(a,left+1,high);
+}
+void my_sort::Quick(vector<int> a){
+
 }
