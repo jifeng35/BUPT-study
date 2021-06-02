@@ -6,6 +6,8 @@
 #include<queue>
 #include<map>
 #include<fstream>
+#include<ctime>
+#include<cstdlib>
 using namespace std;
 //
 // Created by lee on 2021/5/12.
