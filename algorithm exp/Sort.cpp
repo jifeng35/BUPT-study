@@ -2,7 +2,7 @@
 // Created by lee on 2021/6/2.
 //
 #include"Sort.h"
-const int MAX=10000;
+const int MAX=5000;
 int main(){
     my_sort test;
     vector<int> a(MAX,0);
@@ -11,7 +11,9 @@ int main(){
     {
         a[i]=rand();
     }
+    //test.print(a);
     test.Bubble(a);
     test.Quick(a);
+    test.Heap(a);
     test.print_time();
 }
