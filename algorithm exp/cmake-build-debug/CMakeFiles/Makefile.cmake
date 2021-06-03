@@ -49,6 +49,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/BinaryTree.dir/DependInfo.cmake"
   "CMakeFiles/huffman_tree.dir/DependInfo.cmake"
+  "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/fstar.dir/DependInfo.cmake"
   "CMakeFiles/sort.dir/DependInfo.cmake"
   )

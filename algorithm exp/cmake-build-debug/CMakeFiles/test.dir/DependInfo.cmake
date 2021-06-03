@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/BUPT-study/algorithm exp/test01.cpp" "E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/test.dir/test01.cpp.obj"
+  "E:/BUPT-study/algorithm exp/test.cpp" "E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/test.dir/test.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

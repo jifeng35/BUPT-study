@@ -17,11 +17,17 @@ public:
     void swap(int &a,int &b);
     void make_tree(vector<int> &a,int time);
     void sink(vector<int> &a,int time);
+    void Select(vector<int> a);
+    void select(vector<int> &a);
+    void Shell(vector<int> a);
+    void shell(vector<int> &a);
     void print_time();
 private:
     double Bubble_Time;
     double Quick_Time;
     double Heap_Time;
+    double Select_Time;
+    double Shell_Time;
 };
 void my_sort::swap(int&a,int&b){
     if(a==b)
@@ -65,6 +71,10 @@ void my_sort::print_time(){
     cout<<"Quick_Sort Time is "<<Quick_Time<<"s"<<endl;
     if(Heap_Time!=-9.2559631349317831E+61)
         cout<<"Heap_Sort Time is "<<Heap_Time<<"s"<<endl;
+    if(Select_Time!=-9.2559631349317831E+61)
+        cout<<"Select_Time Time is "<<Select_Time<<"s"<<endl;
+    if(Shell_Time!=-9.2559631349317831E+61)
+        cout<<"Shell_Time Time is "<<Shell_Time<<"s"<<endl;
 }
 void my_sort::quick(vector<int> &a,int low,int high){
     if(low>=high){
@@ -168,4 +178,46 @@ void my_sort::sink(vector<int> &a,int time){
                 break;
         }
     }while(!temp);
+}
+void my_sort::Select(vector<int> a){
+    vector<int> b=a;
+    clock_t s_time=clock();
+    select(b);
+    clock_t e_time=clock();
+    Select_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    print(b);
+}
+void my_sort::select(vector<int> &a){
+    if(a[0]>a[1])
+        swap(a[0],a[1]);
+    for(int i=2;i<a.size();i++)
+    {
+        for(int j=i-1;j>=0;) {
+            if(a[i]<a[0])
+            {
+                a.insert(a.begin(),a[i]);
+                a.erase(a.begin()+1+i);
+                break;
+            }
+            else if (a[i] < a[j]) {
+                j--;
+            }
+            else{
+                a.insert(a.begin()+j+1,a[i]);
+                a.erase(a.begin()+i+1);
+                break;
+            }
+        }
+    }
+}
+void my_sort::Shell(vector<int> a){
+    vector<int> b=a;
+    clock_t s_time=clock();
+    shell(b);
+    clock_t e_time=clock();
+    Shell_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    print(b);
+}
+void my_sort::shell(vector<int>&a){
+
 }
