@@ -2,7 +2,7 @@
 // Created by lee on 2021/6/2.
 //
 #include"Sort.h"
-const int MAX=10000;
+const int MAX=10;
 int main(){
     my_sort test;
     vector<int> a(MAX,0);

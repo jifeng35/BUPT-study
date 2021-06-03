@@ -57,9 +57,10 @@ void my_sort::quick(vector<int> &a,int low,int high){
     int left=low;
     int right=high;
     int key=a[left];
-    while(right!=left){
+    while(right>left){
             while(left<right&&a[right]>=key)
                 --right;
+            a[left]=a[right];
             while(left<right&&a[left]<=key)
                 ++left;
             a[right]=a[left];
