@@ -47,7 +47,9 @@ void my_sort::Bubble(vector<int> a){
     Bubble_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
 }
 void my_sort::print_time(){
+    if(Bubble_Time!=-9.2559631349317831E+61)
     cout<<"Bubble_Sort Time is "<<Bubble_Time<<"s"<<endl;
+    if(Quick_Time!=-9.2559631349317831E+61)
     cout<<"Quick_Sort Time is "<<Quick_Time<<"s"<<endl;
 }
 void my_sort::quick(vector<int> &a,int low,int high){

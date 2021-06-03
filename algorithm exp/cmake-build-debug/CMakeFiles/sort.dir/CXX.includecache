@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/BUPT-study/algorithm exp/Sort.cpp
+Sort.h
+E:/BUPT-study/algorithm exp/Sort.h
+
+E:/BUPT-study/algorithm exp/Sort.h
+exp.h
+E:/BUPT-study/algorithm exp/exp.h
+
+E:/BUPT-study/algorithm exp/exp.h
+iostream
+-
+string
+-
+vector
+-
+stack
+-
+queue
+-
+map
+-
+fstream
+-
+ctime
+-
+cstdlib
+-
+
