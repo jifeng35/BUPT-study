@@ -8,16 +8,19 @@
 class my_sort{
 public:
     void Bubble(vector<int> a);
-    void bubble(vector<int> a);
+    void bubble(vector<int> &a);
     void Quick(vector<int> a);
     void quick(vector<int> &a,int low,int high);
+    void Heap(vector<int> a);
+    void heap(vector<int> a);
     void print(vector<int> a);
     void print_time();
 private:
     double Bubble_Time;
     double Quick_Time;
+    double Heap_Time;
 };
-void my_sort::bubble(vector<int> a){
+void my_sort::bubble(vector<int> &a){
     for(int i=0;i<a.size()-1;++i){
         bool no_swap=true;
         for(int j=0;j<a.size()-i-1;++j){
@@ -30,7 +33,6 @@ void my_sort::bubble(vector<int> a){
         }
         if(no_swap)break;
     }
-    print(a);
 }
 void my_sort::print(vector<int> a){
     for(int i=0;i<a.size();++i){
@@ -39,10 +41,12 @@ void my_sort::print(vector<int> a){
     cout<<endl;
 }
 void my_sort::Bubble(vector<int> a){
+    vector<int> b=a;
     clock_t s_time=clock();
-    bubble(a);
+    bubble(b);
     clock_t e_time=clock();
     Bubble_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    print(b);
 }
 void my_sort::print_time(){
     if(Bubble_Time!=-9.2559631349317831E+61)
@@ -76,4 +80,15 @@ void my_sort::Quick(vector<int> a){
     clock_t e_time=clock();
     Quick_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
     print(b);
+}
+void my_sort::Heap(vector<int> a){
+    clock_t s_time=clock();
+    heap(a);
+    clock_t e_time=clock();
+    Heap_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    print(a);
+}
+void my_sort::heap(vector<int> a){
+
+
 }
