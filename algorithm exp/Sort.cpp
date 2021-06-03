@@ -14,6 +14,6 @@ int main(){
     //test.print(a);
     test.Bubble(a);
     test.Quick(a);
-    test.Heap(a);
+    test.Heap(a);//堆排序
     test.print_time();
 }
