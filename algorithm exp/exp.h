@@ -9,6 +9,7 @@
 #include<ctime>
 #include<cstdlib>
 #include<list>
+#include<algorithm>
 using namespace std;
 //
 // Created by lee on 2021/5/12.

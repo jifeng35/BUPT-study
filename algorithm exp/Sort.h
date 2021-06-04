@@ -5,8 +5,9 @@
 #define UNTITLED1_SORT_H
 #endif //UNTITLED1_SORT_H
 #include "exp.h"
-const int MAX=100000;
-const int BN=100;
+const int MAX=10000;//生成数据的多少
+const int BN=1000;//水桶的个数
+const bool print_or_not=0;//是否打印排序结果
 class my_sort{
 public:
     void Bubble(vector<int> a);
@@ -16,7 +17,7 @@ public:
     void Heap(vector<int> a);
     void heap(vector<int> &a);
     void print(vector<int> a);
-    void swap(int &a,int &b);
+    void my_swap(int &a,int &b);
     void make_tree(vector<int> &a,int time);
     void sink(vector<int> &a,int time);
     void Select(vector<int> a);
@@ -26,6 +27,10 @@ public:
     void bucket(vector<int>&a);
     void bucket(vector<int>&a,char useless);
     void Bucket(vector<int>a);
+    void counting(vector<int> &a);
+    void Counting(vector<int> a);
+    void Radix(vector<int> a);
+    void radix(vector<int> &a);
     void print_time();
 private:
     double Bubble_Time;
@@ -34,8 +39,10 @@ private:
     double Select_Time;
     double Shell_Time;
     double Bucket_Time;
+    double Counting_Time;
+    double Radix_Time;
 };
-void my_sort::swap(int&a,int&b){
+void my_sort::my_swap(int&a,int&b){
     if(a==b)
         return;
     a=a+b;
@@ -43,17 +50,16 @@ void my_sort::swap(int&a,int&b){
     a=a-b;
 }
 void my_sort::bubble(vector<int> &a){
-    for(int i=0;i<a.size()-1;++i){
-        bool no_swap=true;
-        for(int j=0;j<a.size()-i-1;++j){
-            if(a[j]>a[j+1]) {
-                a[j] = a[j] + a[j + 1];
-                a[j + 1] = a[j] - a[j + 1];
-                a[j] = a[j] - a[j + 1];
-                no_swap=false;
+   int note=a.size();
+        while(note>1){
+            int temp=0;
+        for (int j = 0; j < note-1; ++j) {
+            if (a[j] > a[j + 1]) {
+                swap(a[j], a[j + 1]);
+                temp = j + 1;
             }
         }
-        if(no_swap)break;
+        note=temp;
     }
 }
 void my_sort::print(vector<int> a){
@@ -68,21 +74,26 @@ void my_sort::Bubble(vector<int> a){
     bubble(b);
     clock_t e_time=clock();
     Bubble_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    if(print_or_not)
     print(b);
 }
 void my_sort::print_time(){
     if(Bubble_Time!=-9.2559631349317831E+61)
-    cout<<"Bubble_Sort Time is "<<Bubble_Time<<"s"<<endl;
+    cout<<"Bubble_Sort Time is "<<Bubble_Time<<"s\t\t\t";
     if(Quick_Time!=-9.2559631349317831E+61)
     cout<<"Quick_Sort Time is "<<Quick_Time<<"s"<<endl;
     if(Heap_Time!=-9.2559631349317831E+61)
-        cout<<"Heap_Sort Time is "<<Heap_Time<<"s"<<endl;
+        cout<<"Heap_Sort Time is "<<Heap_Time<<"s\t\t\t";
     if(Select_Time!=-9.2559631349317831E+61)
-        cout<<"Select_Time Time is "<<Select_Time<<"s"<<endl;
+        cout<<"Select_Sort Time is "<<Select_Time<<"s"<<endl;
     if(Shell_Time!=-9.2559631349317831E+61)
-        cout<<"Shell_Time Time is "<<Shell_Time<<"s"<<endl;
+        cout<<"Shell_Sort Time is "<<Shell_Time<<"s\t\t\t";
     if(Bucket_Time!=-9.2559631349317831E+61)
-        cout<<"Bucket_Time Time is "<<Bucket_Time<<"s"<<endl;
+        cout<<"Bucket_Sort Time is "<<Bucket_Time<<"s"<<endl;
+    if(Counting_Time!=-9.2559631349317831E+61)
+        cout<<"Counting_Sort Time is "<<Counting_Time<<"s"<<endl;
+    if(Radix_Time!=-9.2559631349317831E+61)
+        cout<<"Radix_Sort Time is "<<Radix_Time<<"s"<<endl;
 }
 void my_sort::quick(vector<int> &a,int low,int high){
     if(low>=high){
@@ -109,6 +120,7 @@ void my_sort::Quick(vector<int> a){
     quick(b,0,b.size()-1);
     clock_t e_time=clock();
     Quick_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    if(print_or_not)
     print(b);
 }
 void my_sort::Heap(vector<int> a){
@@ -117,6 +129,7 @@ void my_sort::Heap(vector<int> a){
     heap(b);
     clock_t e_time=clock();
     Heap_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    if(print_or_not)
     print(b);
 }
 void my_sort::heap(vector<int> &a){
@@ -193,6 +206,7 @@ void my_sort::Select(vector<int> a){
     select(b);
     clock_t e_time=clock();
     Select_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    if(print_or_not)
     print(b);
 }
 void my_sort::select(vector<int> &a){
@@ -224,6 +238,7 @@ void my_sort::Shell(vector<int> a){
     shell(b);
     clock_t e_time=clock();
     Shell_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    if(print_or_not)
     print(b);
 }
 void my_sort::shell(vector<int>&a){
@@ -248,6 +263,7 @@ void my_sort::Bucket(vector<int>a){
     bucket(b,'a');
     clock_t e_time=clock();
     Bucket_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    if(print_or_not)
     print(b);
 }
 void my_sort::bucket(vector<int>&a){
@@ -305,7 +321,7 @@ void my_sort::bucket(vector<int>&a){
             }
         }
         else if(a[i]<=max) {
-            if(a5.empty()||a[i]>a5[a5.size()-1]) { a5.push_back(a[i]); }
+            if(a5.empty()||a[i]>a5[a5.size()-1]) { a5.emplace_back(a[i]); }
             else{
                 for (int i1 = 0; i1 < a5.size(); i1++) {
                     if (a5[i1] > a[i]) {
@@ -341,12 +357,12 @@ void my_sort::bucket(vector<int>&a,char useless){
         if(min>a[i])
             min=a[i];
     }
-    vector<vector<int>> a1(BN+2);
+    vector<vector<int>> a1(BN+100);
     for(int ai=0;ai<a.size();ai++){
         int i= (a[ai]-min)/((max-min)/BN);
         if(a[ai]==max)
-            a1[BN].push_back(max);
-                else if (a1[i].empty() || a[ai] > a1[i][a1[i].size() - 1])a1[i].push_back(a[ai]);
+            a1[BN].emplace_back(max);
+                else if (a1[i].empty() || a[ai] > a1[i][a1[i].size() - 1])a1[i].emplace_back(a[ai]);
                 else {
                     for (int i1 = 0; i1 < a1[i].size(); i1++) {
                         if (a1[i][i1] > a[ai]) {
@@ -364,4 +380,59 @@ void my_sort::bucket(vector<int>&a,char useless){
             }
         }
     }
+}
+void my_sort::counting(vector<int> &a){
+    int max=0,min=a[0];
+    for(int i=0;i<a.size();i++){
+        if(max<a[i])
+            max=a[i];
+        if(min>a[i])
+            min=a[i];
+    }
+   vector<int> temp(max-min+1,0);
+    for(int i=0;i<a.size();i++){
+        temp[a[i]-min]++;
+    }
+    int num=0;
+    for(int i=0;i<temp.size();i++){
+        for(int j=0;j<temp[i];j++)
+            a[num++]=i+min;
+        }
+    }
+void my_sort::Counting(vector<int> a){
+    vector<int> b=a;
+    clock_t s_time=clock();
+    counting(b);
+    clock_t e_time=clock();
+    Counting_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    if(print_or_not)
+        print(b);
+}
+void my_sort::radix(vector<int> &a){
+    int time=1;
+    int len=a.size();
+    while(time<100000){
+        vector<vector<int>> temp(10);
+        for (int i = 0; i < len; i++) {
+            temp[(a[i] / time) % 10].emplace_back(a[i]);
+        }
+        time*=10;
+        a.clear();
+        for (int j = 0; j < temp.size(); j++) {
+            if(!temp[j].empty())
+            for (int i = 0; i < temp[j].size(); i++) {
+                a.emplace_back(temp[j][i]);
+            }
+        }
+        temp.clear();
+    }
+}
+void my_sort::Radix(vector<int> a){
+    vector<int> b=a;
+    clock_t s_time=clock();
+    radix(b);
+    clock_t e_time=clock();
+    Radix_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    if(print_or_not)
+        print(b);
 }

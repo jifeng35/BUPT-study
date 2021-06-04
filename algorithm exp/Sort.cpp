@@ -11,12 +11,39 @@ int main(){
     {
         a[i]=rand();
     }
+    vector<int> b=a;//bÎªË³Ğò
+    test.quick(b,0,b.size()-1);
+    vector<int> c=b;//cÎªÄæĞò
+    reverse(c.begin(),c.end());
     //test.print(a);
-    test.Bubble(a);//å†’æ³¡æ’åº
-    test.Quick(a);//å¿«é€Ÿæ’åº
-    test.Heap(a);//å †æ’åº
-    test.Select(a);//é€‰æ‹©æ’åº
-    test.Shell(a);//å¸Œå°”æ’åº
-    test.Bucket(a);//æ¡¶æ’åº
+    cout<<"ÒÔÏÂÎªËæ»úÊı¾İµÄ½á¹û:"<<endl;
+    test.Bubble(a);//Ã°ÅİÅÅĞò
+    test.Quick(a);//¿ìËÙÅÅĞò
+    test.Heap(a);//¶ÑÅÅĞò
+    test.Select(a);//Ñ¡ÔñÅÅĞò
+    test.Shell(a);//Ï£¶ûÅÅĞò
+    test.Bucket(a);//Í°ÅÅĞò
+    test.Counting(a);//¼ÆÊıÅÅĞò
+    test.Radix(a);
+    test.print_time();
+    cout<<"ÒÔÏÂÎªË³ĞòÊı¾İµÄ½á¹û:"<<endl;
+    test.Bubble(b);//Ã°ÅİÅÅĞò
+    test.Quick(b);//¿ìËÙÅÅĞò
+    test.Heap(b);//¶ÑÅÅĞò
+    test.Select(b);//Ñ¡ÔñÅÅĞò
+    test.Shell(b);//Ï£¶ûÅÅĞò
+    test.Bucket(b);//Í°ÅÅĞò
+    test.Counting(b);//¼ÆÊıÅÅĞò
+    test.Radix(b);
+    test.print_time();
+    cout<<"ÒÔÏÂÎªÄæĞòÊı¾İµÄ½á¹û:"<<endl;
+    test.Bubble(c);//Ã°ÅİÅÅĞò
+    test.Quick(c);//¿ìËÙÅÅĞò
+    test.Heap(c);//¶ÑÅÅĞò
+    test.Select(c);//Ñ¡ÔñÅÅĞò
+    test.Shell(c);//Ï£¶ûÅÅĞò
+    test.Bucket(c);//Í°ÅÅĞò
+    test.Counting(c);//¼ÆÊıÅÅĞò
+    test.Radix(c);
     test.print_time();
 }
