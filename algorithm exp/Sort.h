@@ -5,7 +5,8 @@
 #define UNTITLED1_SORT_H
 #endif //UNTITLED1_SORT_H
 #include "exp.h"
-const int MAX=50;
+const int MAX=100000;
+const int BN=100;
 class my_sort{
 public:
     void Bubble(vector<int> a);
@@ -23,6 +24,7 @@ public:
     void Shell(vector<int> a);
     void shell(vector<int> &a);
     void bucket(vector<int>&a);
+    void bucket(vector<int>&a,char useless);
     void Bucket(vector<int>a);
     void print_time();
 private:
@@ -243,7 +245,7 @@ void my_sort::shell(vector<int>&a){
 void my_sort::Bucket(vector<int>a){
     vector<int> b=a;
     clock_t s_time=clock();
-    bucket(b);
+    bucket(b,'a');
     clock_t e_time=clock();
     Bucket_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
     print(b);
@@ -329,5 +331,37 @@ void my_sort::bucket(vector<int>&a){
     }
     for(int i=0;i<a5.size();i++){
         a.emplace_back(a5[i]);
+    }
+}
+void my_sort::bucket(vector<int>&a,char useless){
+    int max=0,min=a[0];
+    for(int i=0;i<a.size();i++){
+        if(max<a[i])
+            max=a[i];
+        if(min>a[i])
+            min=a[i];
+    }
+    vector<vector<int>> a1(BN+2);
+    for(int ai=0;ai<a.size();ai++){
+        int i= (a[ai]-min)/((max-min)/BN);
+        if(a[ai]==max)
+            a1[BN].push_back(max);
+                else if (a1[i].empty() || a[ai] > a1[i][a1[i].size() - 1])a1[i].push_back(a[ai]);
+                else {
+                    for (int i1 = 0; i1 < a1[i].size(); i1++) {
+                        if (a1[i][i1] > a[ai]) {
+                            a1[i].insert(a1[i].begin() + i1, a[ai]);
+                            break;
+                        }
+                    }
+                }
+            }
+    a.clear();
+    for(int i=0;i<a1.size();i++){
+        if(!a1[i].empty()) {
+            for (int j = 0; j < a1[i].size(); j++) {
+                a.emplace_back(a1[i][j]);
+            }
+        }
     }
 }
