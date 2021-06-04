@@ -113,8 +113,8 @@ void my_sort::Heap(vector<int> a){
 }
 void my_sort::heap(vector<int> &a){
     int time=0;
+    make_tree(a, time);
     while(time<a.size()){
-        make_tree(a, time);
         time++;
         swap(a[0],a[a.size()-time]);//此时根节点(第一个数组内元素)为最大数,将其与数组末尾swap,不再访问最后一个元素
         sink(a,time);
@@ -219,5 +219,18 @@ void my_sort::Shell(vector<int> a){
     print(b);
 }
 void my_sort::shell(vector<int>&a){
-
+    int gap=a.size()/2;
+    bool temp=false;
+    do{
+        temp=false;
+        for(int i=0;(i+gap)<a.size();i++)
+        {
+            if(a[i]>a[i+gap]) {
+                swap(a[i], a[i + gap]);
+                temp=true;
+            }
+        }
+        if(!temp)
+            gap=gap/2;
+    }while(gap);
 }

@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+E:/BUPT-study/algorithm exp/Sort.h
+exp.h
+E:/BUPT-study/algorithm exp/exp.h
+
 E:/BUPT-study/algorithm exp/exp.h
 iostream
 -
@@ -21,12 +25,16 @@ map
 -
 fstream
 -
+ctime
+-
+cstdlib
+-
+list
+-
 
-E:/BUPT-study/algorithm exp/test01.cpp
-test01.h
-E:/BUPT-study/algorithm exp/test01.h
-
-E:/BUPT-study/algorithm exp/test01.h
+E:/BUPT-study/algorithm exp/test.cpp
 exp.h
 E:/BUPT-study/algorithm exp/exp.h
+Sort.h
+E:/BUPT-study/algorithm exp/Sort.h
 
