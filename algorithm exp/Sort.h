@@ -5,6 +5,7 @@
 #define UNTITLED1_SORT_H
 #endif //UNTITLED1_SORT_H
 #include "exp.h"
+const int MAX=50;
 class my_sort{
 public:
     void Bubble(vector<int> a);
@@ -21,6 +22,8 @@ public:
     void select(vector<int> &a);
     void Shell(vector<int> a);
     void shell(vector<int> &a);
+    void bucket(vector<int>&a);
+    void Bucket(vector<int>a);
     void print_time();
 private:
     double Bubble_Time;
@@ -28,6 +31,7 @@ private:
     double Heap_Time;
     double Select_Time;
     double Shell_Time;
+    double Bucket_Time;
 };
 void my_sort::swap(int&a,int&b){
     if(a==b)
@@ -75,6 +79,8 @@ void my_sort::print_time(){
         cout<<"Select_Time Time is "<<Select_Time<<"s"<<endl;
     if(Shell_Time!=-9.2559631349317831E+61)
         cout<<"Shell_Time Time is "<<Shell_Time<<"s"<<endl;
+    if(Bucket_Time!=-9.2559631349317831E+61)
+        cout<<"Bucket_Time Time is "<<Bucket_Time<<"s"<<endl;
 }
 void my_sort::quick(vector<int> &a,int low,int high){
     if(low>=high){
@@ -233,4 +239,95 @@ void my_sort::shell(vector<int>&a){
         if(!temp)
             gap=gap/2;
     }while(gap);
+}
+void my_sort::Bucket(vector<int>a){
+    vector<int> b=a;
+    clock_t s_time=clock();
+    bucket(b);
+    clock_t e_time=clock();
+    Bucket_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    print(b);
+}
+void my_sort::bucket(vector<int>&a){
+    int max=0,min=a[0];
+    for(int i=0;i<a.size();i++){
+        if(max<a[i])
+            max=a[i];
+        if(min>a[i])
+            min=a[i];
+    }
+    vector<int> a1;vector<int> a2;vector<int> a3;vector<int> a4;vector<int> a5;
+    for(int i=0;i<a.size();i++){
+        if(a[i]<(min+(max-min)*1/5)) {
+            if(a1.empty()||a[i]>a1[a1.size()-1]) { a1.push_back(a[i]); }
+            else{
+                for (int i1 = 0; i1 < a1.size(); i1++) {
+                    if (a1[i1] > a[i]) {
+                        a1.insert(a1.begin() + i1, a[i]);
+                        break;
+                    }
+                }
+            }
+        }
+        else if(a[i]<(min+(max-min)*2/5)) {
+            if(a2.empty()||a[i]>a2[a2.size()-1]) { a2.push_back(a[i]); }
+            else{
+                for (int i1 = 0; i1 < a2.size(); i1++) {
+                    if (a2[i1] > a[i]) {
+                        a2.insert(a2.begin() + i1, a[i]);
+                        break;
+                    }
+                }
+            }
+        }
+        else if(a[i]<(min+(max-min)*3/5)) {
+            if(a3.empty()||a[i]>a3[a3.size()-1]) { a3.push_back(a[i]); }
+            else{
+                for (int i1 = 0; i1 < a3.size(); i1++) {
+                    if (a3[i1] > a[i]) {
+                        a3.insert(a3.begin() + i1, a[i]);
+                        break;
+                    }
+                }
+            }
+        }
+        else if(a[i]<(min+(max-min)*4/5)) {
+            if(a4.empty()||a[i]>a4[a4.size()-1]) { a4.push_back(a[i]); }
+            else{
+                for (int i1 = 0; i1 < a4.size(); i1++) {
+                    if (a4[i1] > a[i]) {
+                        a4.insert(a4.begin() + i1, a[i]);
+                        break;
+                    }
+                }
+            }
+        }
+        else if(a[i]<=max) {
+            if(a5.empty()||a[i]>a5[a5.size()-1]) { a5.push_back(a[i]); }
+            else{
+                for (int i1 = 0; i1 < a5.size(); i1++) {
+                    if (a5[i1] > a[i]) {
+                        a5.insert(a5.begin() + i1, a[i]);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    a.clear();
+    for(int i=0;i<a1.size();i++){
+        a.emplace_back(a1[i]);
+    }
+    for(int i=0;i<a2.size();i++){
+        a.emplace_back(a2[i]);
+    }
+    for(int i=0;i<a3.size();i++){
+        a.emplace_back(a3[i]);
+    }
+    for(int i=0;i<a4.size();i++){
+        a.emplace_back(a4[i]);
+    }
+    for(int i=0;i<a5.size();i++){
+        a.emplace_back(a5[i]);
+    }
 }
