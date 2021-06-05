@@ -481,6 +481,7 @@ void my_sort::merge(vector<int> &a,int time) {
     if(time>a.size())
         return;
     for(int i=0;i<a.size();i+=time){
+        if(time==1)
 
     }
     time*=2;//time为合并之前有几个数
