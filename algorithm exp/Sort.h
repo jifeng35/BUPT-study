@@ -33,6 +33,8 @@ public:
     void radix(vector<int> &a);
     void select(vector<int>&a);
     void Select(vector<int> a);
+    void Merge(vector<int> a);
+    void merge(vector<int> &a,int time);
     void print_time();
 private:
     double Bubble_Time;
@@ -44,6 +46,7 @@ private:
     double Counting_Time;
     double Radix_Time;
     double Insert_Time;
+    double Merge_Time;
 };
 void my_sort::my_swap(int&a,int&b){
     if(a==b)
@@ -463,4 +466,23 @@ void my_sort::Select(vector<int> a){
     Select_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
     if(print_or_not)
         print(b);
+}
+void my_sort::Merge(vector<int> a) {
+    int time =1;
+    vector<int> b=a;
+    clock_t s_time=clock();
+    merge(b,time);
+    clock_t e_time=clock();
+    Merge_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    //if(print_or_not)
+        print(b);
+}
+void my_sort::merge(vector<int> &a,int time) {
+    if(time>a.size())
+        return;
+    for(int i=0;i<a.size();i+=time){
+
+    }
+    time*=2;//time为合并之前有几个数
+    merge(a,time);
 }
