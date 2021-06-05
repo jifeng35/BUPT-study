@@ -24,8 +24,8 @@ int main(){
     test.Shell(a);//希尔排序
     test.Bucket(a);//桶排序
     test.Counting(a);//计数排序
-    test.Radix(a);
-    test.insert(a);
+    test.Radix(a);//基数排序
+    test.Insert(a);//插入排序
     test.print_time();
     cout<<"以下为顺序数据的结果:"<<endl;
     test.Bubble(b);//冒泡排序
@@ -35,8 +35,8 @@ int main(){
     test.Shell(b);//希尔排序
     test.Bucket(b);//桶排序
     test.Counting(b);//计数排序
-    test.Radix(b);
-    test.insert(b);
+    test.Radix(b);//基数排序
+    test.Insert(b);//插入排序
     test.print_time();
     cout<<"以下为逆序数据的结果:"<<endl;
     test.Bubble(c);//冒泡排序
@@ -46,7 +46,7 @@ int main(){
     test.Shell(c);//希尔排序
     test.Bucket(c);//桶排序
     test.Counting(c);//计数排序
-    test.Radix(c);
-    test.insert(c);
+    test.Radix(c);//基数排序
+    test.Insert(c);//插入排序
     test.print_time();
 }

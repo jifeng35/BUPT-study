@@ -99,6 +99,7 @@ void my_sort::print_time(){
         cout<<"Radix_Sort Time is "<<Radix_Time<<"s"<<endl;
     if( Insert_Time!=-9.2559631349317831E+61)
         cout<<"Insert_Sort Time is "<< Insert_Time<<"s\t\t\t";
+    cout<<endl;
 }
 void my_sort::quick(vector<int> &a,int low,int high){
     if(low>=high){
@@ -210,7 +211,7 @@ void my_sort::Insert(vector<int> a){
     clock_t s_time=clock();
     select(b);
     clock_t e_time=clock();
-    Select_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    Insert_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
     if(print_or_not)
     print(b);
 }
@@ -460,6 +461,6 @@ void my_sort::Select(vector<int> a){
     select(b);
     clock_t e_time=clock();
     Select_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
-    //if(print_or_not)
+    if(print_or_not)
         print(b);
 }
