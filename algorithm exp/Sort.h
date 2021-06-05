@@ -20,8 +20,8 @@ public:
     void my_swap(int &a,int &b);
     void make_tree(vector<int> &a,int time);
     void sink(vector<int> &a,int time);
-    void Select(vector<int> a);
-    void select(vector<int> &a);
+    void Insert(vector<int> a);
+    void insert(vector<int> &a);
     void Shell(vector<int> a);
     void shell(vector<int> &a);
     void bucket(vector<int>&a);
@@ -31,6 +31,8 @@ public:
     void Counting(vector<int> a);
     void Radix(vector<int> a);
     void radix(vector<int> &a);
+    void select(vector<int>&a);
+    void Select(vector<int> a);
     void print_time();
 private:
     double Bubble_Time;
@@ -41,6 +43,7 @@ private:
     double Bucket_Time;
     double Counting_Time;
     double Radix_Time;
+    double Insert_Time;
 };
 void my_sort::my_swap(int&a,int&b){
     if(a==b)
@@ -94,6 +97,8 @@ void my_sort::print_time(){
         cout<<"Counting_Sort Time is "<<Counting_Time<<"s\t\t\t";
     if(Radix_Time!=-9.2559631349317831E+61)
         cout<<"Radix_Sort Time is "<<Radix_Time<<"s"<<endl;
+    if( Insert_Time!=-9.2559631349317831E+61)
+        cout<<"Insert_Sort Time is "<< Insert_Time<<"s\t\t\t";
 }
 void my_sort::quick(vector<int> &a,int low,int high){
     if(low>=high){
@@ -200,7 +205,7 @@ void my_sort::sink(vector<int> &a,int time){
         }
     }while(!temp);
 }
-void my_sort::Select(vector<int> a){
+void my_sort::Insert(vector<int> a){
     vector<int> b=a;
     clock_t s_time=clock();
     select(b);
@@ -209,7 +214,7 @@ void my_sort::Select(vector<int> a){
     if(print_or_not)
     print(b);
 }
-void my_sort::select(vector<int> &a){
+void my_sort::insert(vector<int> &a){
     if(a[0]>a[1])
         swap(a[0],a[1]);
     for(int i=2;i<a.size();i++)
@@ -434,5 +439,27 @@ void my_sort::Radix(vector<int> a){
     clock_t e_time=clock();
     Radix_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
     if(print_or_not)
+        print(b);
+}
+void my_sort::select(vector<int> &a){
+    for(int j=0;j<a.size();j++){
+        int min=a[j];
+        int temp=j;
+        for (int i = j; i < a.size(); i++) {
+            if(min>a[i]) {
+                min = a[i];
+                temp = i;
+            }
+        }
+        swap(a[temp],a[j]);
+    }
+}
+void my_sort::Select(vector<int> a){
+    vector<int> b=a;
+    clock_t s_time=clock();
+    select(b);
+    clock_t e_time=clock();
+    Select_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
+    //if(print_or_not)
         print(b);
 }

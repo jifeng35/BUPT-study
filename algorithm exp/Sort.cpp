@@ -25,6 +25,7 @@ int main(){
     test.Bucket(a);//桶排序
     test.Counting(a);//计数排序
     test.Radix(a);
+    test.insert(a);
     test.print_time();
     cout<<"以下为顺序数据的结果:"<<endl;
     test.Bubble(b);//冒泡排序
@@ -35,6 +36,7 @@ int main(){
     test.Bucket(b);//桶排序
     test.Counting(b);//计数排序
     test.Radix(b);
+    test.insert(b);
     test.print_time();
     cout<<"以下为逆序数据的结果:"<<endl;
     test.Bubble(c);//冒泡排序
@@ -45,5 +47,6 @@ int main(){
     test.Bucket(c);//桶排序
     test.Counting(c);//计数排序
     test.Radix(c);
+    test.insert(c);
     test.print_time();
 }
