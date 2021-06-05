@@ -11,4 +11,5 @@ int main(){
     test.print(test1);
     test1.erase(test1.begin()+1);//x.begin()+i,删除的元素就在x[i]上
     test.print(test1);
+    cout<<"\'";
 }

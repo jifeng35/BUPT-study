@@ -6,3 +6,5 @@ add_executable(huffman_tree huffman_tree.cpp)
 add_executable(fstar fstar.h Fstar.cpp)
 add_executable(sort Sort.h Sort.cpp)
 add_executable(test test.h test.cpp)
+add_executable(greedy greedy.h greedy.cpp)
+

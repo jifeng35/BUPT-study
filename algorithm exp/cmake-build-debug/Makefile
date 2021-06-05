@@ -166,6 +166,19 @@ fstar\fast:
 .PHONY : fstar\fast
 
 #=============================================================================
+# Target rules for targets named greedy
+
+# Build rule for target.
+greedy: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) greedy
+.PHONY : greedy
+
+# fast build rule for target.
+greedy\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\greedy.dir\build
+.PHONY : greedy\fast
+
+#=============================================================================
 # Target rules for targets named sort
 
 # Build rule for target.
@@ -259,6 +272,33 @@ fstar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\fstar.cpp.s
 .PHONY : fstar.cpp.s
 
+greedy.obj: greedy.cpp.obj
+
+.PHONY : greedy.obj
+
+# target to build an object file
+greedy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\greedy.dir\greedy.cpp.obj
+.PHONY : greedy.cpp.obj
+
+greedy.i: greedy.cpp.i
+
+.PHONY : greedy.i
+
+# target to preprocess a source file
+greedy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\greedy.dir\greedy.cpp.i
+.PHONY : greedy.cpp.i
+
+greedy.s: greedy.cpp.s
+
+.PHONY : greedy.s
+
+# target to generate assembly for a file
+greedy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\greedy.dir\greedy.cpp.s
+.PHONY : greedy.cpp.s
+
 huffman_tree.obj: huffman_tree.cpp.obj
 
 .PHONY : huffman_tree.obj
@@ -323,6 +363,7 @@ help:
 	@echo ... rebuild_cache
 	@echo ... BinaryTree
 	@echo ... fstar
+	@echo ... greedy
 	@echo ... huffman_tree
 	@echo ... sort
 	@echo ... test
@@ -335,6 +376,9 @@ help:
 	@echo ... fstar.obj
 	@echo ... fstar.i
 	@echo ... fstar.s
+	@echo ... greedy.obj
+	@echo ... greedy.i
+	@echo ... greedy.s
 	@echo ... huffman_tree.obj
 	@echo ... huffman_tree.i
 	@echo ... huffman_tree.s

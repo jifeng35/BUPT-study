@@ -1,8 +1,8 @@
 //
 // Created by lee on 2021/6/2.
 //
+#pragma GCC optimize(3, "Ofast", "inline")
 #include"Sort.h"
-
 int main(){
     my_sort test;
     vector<int> a(MAX,0);

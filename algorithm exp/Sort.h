@@ -4,6 +4,7 @@
 #ifndef UNTITLED1_SORT_H
 #define UNTITLED1_SORT_H
 #endif //UNTITLED1_SORT_H
+
 #include "exp.h"
 const int MAX=10000;//生成数据的多少
 const int BN=1000;//水桶的个数

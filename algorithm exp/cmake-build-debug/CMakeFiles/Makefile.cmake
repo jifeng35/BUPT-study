@@ -51,5 +51,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/huffman_tree.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/fstar.dir/DependInfo.cmake"
+  "CMakeFiles/greedy.dir/DependInfo.cmake"
   "CMakeFiles/sort.dir/DependInfo.cmake"
   )

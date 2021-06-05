@@ -31,6 +31,8 @@ cstdlib
 -
 list
 -
+algorithm
+-
 
 E:/BUPT-study/algorithm exp/test.cpp
 exp.h
