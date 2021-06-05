@@ -26,6 +26,7 @@ int main(){
     test.Counting(a);//计数排序
     test.Radix(a);//基数排序
     test.Insert(a);//插入排序
+    test.Merge(a);
     test.print_time();
     cout<<"以下为顺序数据的结果:"<<endl;
     test.Bubble(b);//冒泡排序
@@ -37,6 +38,7 @@ int main(){
     test.Counting(b);//计数排序
     test.Radix(b);//基数排序
     test.Insert(b);//插入排序
+    test.Merge(b);
     test.print_time();
     cout<<"以下为逆序数据的结果:"<<endl;
     test.Bubble(c);//冒泡排序
@@ -48,5 +50,6 @@ int main(){
     test.Counting(c);//计数排序
     test.Radix(c);//基数排序
     test.Insert(c);//插入排序
+    test.Merge(c);
     test.print_time();
 }

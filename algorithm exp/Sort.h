@@ -34,7 +34,8 @@ public:
     void select(vector<int>&a);
     void Select(vector<int> a);
     void Merge(vector<int> a);
-    void merge(vector<int> &a,int time);
+    void merge(vector<int> &a, int front, int end);
+    void _merge(vector<int> &Array, int front, int mid, int end);
     void print_time();
 private:
     double Bubble_Time;
@@ -102,7 +103,8 @@ void my_sort::print_time(){
         cout<<"Radix_Sort Time is "<<Radix_Time<<"s"<<endl;
     if( Insert_Time!=-9.2559631349317831E+61)
         cout<<"Insert_Sort Time is "<< Insert_Time<<"s\t\t\t";
-    cout<<endl;
+    if( Merge_Time!=-9.2559631349317831E+61)
+        cout<<"Merge_Sort Time is "<< Merge_Time<<"s"<<endl;
 }
 void my_sort::quick(vector<int> &a,int low,int high){
     if(low>=high){
@@ -471,19 +473,39 @@ void my_sort::Merge(vector<int> a) {
     int time =1;
     vector<int> b=a;
     clock_t s_time=clock();
-    merge(b,time);
+    merge(b,0,b.size()-1);
     clock_t e_time=clock();
     Merge_Time=(double)(e_time-s_time)/CLOCKS_PER_SEC;
-    //if(print_or_not)
+    if(print_or_not)
         print(b);
 }
-void my_sort::merge(vector<int> &a,int time) {
-    if(time>a.size())
-        return;
-    for(int i=0;i<a.size();i+=time){
-        if(time==1)
-
+void my_sort::_merge(vector<int> &Array, int front, int mid, int end) {
+    // preconditions:
+    // Array[front...mid] is sorted
+    // Array[mid+1 ... end] is sorted
+    // Copy Array[front ... mid] to LeftSubArray
+    // Copy Array[mid+1 ... end] to RightSubArray
+    vector<int> LeftSubArray(Array.begin() + front, Array.begin() + mid + 1);
+    vector<int> RightSubArray(Array.begin() + mid + 1, Array.begin() + end + 1);
+    int idxLeft = 0, idxRight = 0;
+    LeftSubArray.insert(LeftSubArray.end(), numeric_limits<int>::max());
+    RightSubArray.insert(RightSubArray.end(), numeric_limits<int>::max());
+    // Pick min of LeftSubArray[idxLeft] and RightSubArray[idxRight], and put into Array[i]
+    for (int i = front; i <= end; i++) {
+        if (LeftSubArray[idxLeft] < RightSubArray[idxRight]) {
+            Array[i] = LeftSubArray[idxLeft];
+            idxLeft++;
+        } else {
+            Array[i] = RightSubArray[idxRight];
+            idxRight++;
+        }
     }
-    time*=2;//time为合并之前有几个数
-    merge(a,time);
+}
+void my_sort::merge(vector<int> &a, int front, int end) {
+    if (front >= end)
+        return;
+    int mid = (front + end) / 2;
+    merge(a, front, mid);
+    merge(a, mid + 1, end);
+    _merge(a, front, mid, end);
 }
