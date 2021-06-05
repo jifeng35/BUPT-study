@@ -91,7 +91,7 @@ void my_sort::print_time(){
     if(Bucket_Time!=-9.2559631349317831E+61)
         cout<<"Bucket_Sort Time is "<<Bucket_Time<<"s"<<endl;
     if(Counting_Time!=-9.2559631349317831E+61)
-        cout<<"Counting_Sort Time is "<<Counting_Time<<"s"<<endl;
+        cout<<"Counting_Sort Time is "<<Counting_Time<<"s\t\t\t";
     if(Radix_Time!=-9.2559631349317831E+61)
         cout<<"Radix_Sort Time is "<<Radix_Time<<"s"<<endl;
 }
