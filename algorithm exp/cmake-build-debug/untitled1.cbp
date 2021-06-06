@@ -17,50 +17,6 @@
 					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Binary">
-				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/Binary.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
-					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\include"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 Binary"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Binary/fast">
-				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/Binary.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
-					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\include"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 Binary/fast"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="BinaryTree">
 				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/BinaryTree.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
@@ -325,6 +281,50 @@
 					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="BS">
+				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/BS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 BS"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BS/fast">
+				<Option output="E:/BUPT-study/algorithm exp/cmake-build-debug/BS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="E:\proflie\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 BS/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;E:\BUPT-study\algorithm exp\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="E:/BUPT-study/algorithm exp/cmake-build-debug"/>
 				<Option type="4"/>
@@ -350,10 +350,10 @@
 			<Option target="BinaryTree"/>
 		</Unit>
 		<Unit filename="E:/BUPT-study/algorithm exp/Binary_Search_Tree.cpp">
-			<Option target="Binary"/>
+			<Option target="BS"/>
 		</Unit>
 		<Unit filename="E:/BUPT-study/algorithm exp/Binary_Search_Tree.h">
-			<Option target="Binary"/>
+			<Option target="BS"/>
 		</Unit>
 		<Unit filename="E:/BUPT-study/algorithm exp/Sort.cpp">
 			<Option target="sort"/>

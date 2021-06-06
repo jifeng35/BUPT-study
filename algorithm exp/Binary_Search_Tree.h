@@ -15,19 +15,24 @@ struct BS_Node{
 };
 class BS_Tree{
 public:
-    BS_Tree();
+    BS_Tree(vector<int> a){
+        root=NULL;
+        BS_Node **ptr=&(root);
+        for(int i=0;i<a.size();i++){
+            insert(ptr,a[i]);
+        }
+    }
     void createBSTree();
+    void Inorder_Traversal();
     void search(int val);
     void erase(int val);
-    void insert(int val);
-    BS_Node * find_pos(int val);
+    void print(vector<int> a);
+    void insert(BS_Node**ptr,int val);
+    //BS_Node * find_pos(int val);
     ~BS_Tree();
 private:
     BS_Node*root;
 };
-BS_Tree::BS_Tree(){
-
-}
 void BS_Tree::createBSTree(){
 
 }
@@ -37,12 +42,56 @@ void BS_Tree::erase(int val) {
 void BS_Tree::search(int val){
 
 }
-void BS_Tree::insert(int val){
-
+void BS_Tree::insert(BS_Node**ptr,int val){
+    if(*ptr==NULL){
+        BS_Node*temp=new BS_Node;
+        temp->left=NULL;
+        temp->right=NULL;
+        temp->val=val;
+        *ptr=temp;
+            return;
+        }
+    else if(val>(*ptr)->val){
+        insert(&(*ptr)->right,val);
+    }
+    else if(val<(*ptr)->val)
+    {
+        insert(&(*ptr)->left,val);
+    }
 }
-BS_Node *BS_Tree::find_pos(int val){
-
-}
+//BS_Node *BS_Tree::find_pos(int val){}
 BS_Tree::~BS_Tree(){
 
+}
+void BS_Tree::Inorder_Traversal(){//中序遍历
+    if (!root)
+    {
+        cout << "Your tree is empty!" << endl;
+        return;
+    }
+    stack<BS_Node*> temp;
+    temp.push(root);
+    vector<int> res;
+    BS_Node* p = root;
+    while (!temp.empty())
+    {
+        while ((p)&&(p->left))
+        {
+            p = p->left;
+            temp.push(p);
+        }
+        p = temp.top();
+        temp.pop();
+        res.emplace_back(p->val);
+        p = p->right;
+        if(p)
+            temp.push(p);
+    }
+    print(res);
+}
+void BS_Tree::print(vector<int> a){
+    for(int i=0;i<a.size();i++){
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
 }

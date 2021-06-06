@@ -114,19 +114,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Binary
-
-# Build rule for target.
-Binary: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) Binary
-.PHONY : Binary
-
-# fast build rule for target.
-Binary\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\build
-.PHONY : Binary\fast
-
-#=============================================================================
 # Target rules for targets named BinaryTree
 
 # Build rule for target.
@@ -204,6 +191,19 @@ sort\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\sort.dir\build
 .PHONY : sort\fast
 
+#=============================================================================
+# Target rules for targets named BS
+
+# Build rule for target.
+BS: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) BS
+.PHONY : BS
+
+# fast build rule for target.
+BS\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BS.dir\build
+.PHONY : BS\fast
+
 BinaryTree.obj: BinaryTree.cpp.obj
 
 .PHONY : BinaryTree.obj
@@ -237,7 +237,7 @@ Binary_Search_Tree.obj: Binary_Search_Tree.cpp.obj
 
 # target to build an object file
 Binary_Search_Tree.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\Binary_Search_Tree.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BS.dir\Binary_Search_Tree.cpp.obj
 .PHONY : Binary_Search_Tree.cpp.obj
 
 Binary_Search_Tree.i: Binary_Search_Tree.cpp.i
@@ -246,7 +246,7 @@ Binary_Search_Tree.i: Binary_Search_Tree.cpp.i
 
 # target to preprocess a source file
 Binary_Search_Tree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\Binary_Search_Tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BS.dir\Binary_Search_Tree.cpp.i
 .PHONY : Binary_Search_Tree.cpp.i
 
 Binary_Search_Tree.s: Binary_Search_Tree.cpp.s
@@ -255,7 +255,7 @@ Binary_Search_Tree.s: Binary_Search_Tree.cpp.s
 
 # target to generate assembly for a file
 Binary_Search_Tree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\Binary_Search_Tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BS.dir\Binary_Search_Tree.cpp.s
 .PHONY : Binary_Search_Tree.cpp.s
 
 Sort.obj: Sort.cpp.obj
@@ -401,7 +401,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Binary
+	@echo ... BS
 	@echo ... BinaryTree
 	@echo ... fstar
 	@echo ... greedy
