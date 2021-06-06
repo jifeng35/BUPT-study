@@ -47,6 +47,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/Binary.dir/DependInfo.cmake"
   "CMakeFiles/BinaryTree.dir/DependInfo.cmake"
   "CMakeFiles/huffman_tree.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"

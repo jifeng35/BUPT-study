@@ -7,4 +7,5 @@ add_executable(fstar fstar.h Fstar.cpp)
 add_executable(sort Sort.h Sort.cpp)
 add_executable(test test.h test.cpp)
 add_executable(greedy greedy.h greedy.cpp)
+add_executable(Binary Binary_Search_Tree.h Binary_Search_Tree.cpp)
 

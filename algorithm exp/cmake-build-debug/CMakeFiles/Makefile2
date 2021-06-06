@@ -56,6 +56,7 @@ CMAKE_BINARY_DIR = "E:\BUPT-study\algorithm exp\cmake-build-debug"
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles\Binary.dir\all
 all: CMakeFiles\BinaryTree.dir\all
 all: CMakeFiles\huffman_tree.dir\all
 all: CMakeFiles\test.dir\all
@@ -71,6 +72,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles\Binary.dir\clean
 clean: CMakeFiles\BinaryTree.dir\clean
 clean: CMakeFiles\huffman_tree.dir\clean
 clean: CMakeFiles\test.dir\clean
@@ -81,13 +83,40 @@ clean: CMakeFiles\sort.dir\clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/Binary.dir
+
+# All Build rule for target.
+CMakeFiles\Binary.dir\all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target Binary"
+.PHONY : CMakeFiles\Binary.dir\all
+
+# Build rule for subdir invocation for target.
+CMakeFiles\Binary.dir\rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\all
+	$(CMAKE_COMMAND) -E cmake_progress_start "E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles\Binary.dir\rule
+
+# Convenience name for target.
+Binary: CMakeFiles\Binary.dir\rule
+
+.PHONY : Binary
+
+# clean rule for target.
+CMakeFiles\Binary.dir\clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\clean
+.PHONY : CMakeFiles\Binary.dir\clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/BinaryTree.dir
 
 # All Build rule for target.
 CMakeFiles\BinaryTree.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target BinaryTree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=3,4 "Built target BinaryTree"
 .PHONY : CMakeFiles\BinaryTree.dir\all
 
 # Build rule for subdir invocation for target.
@@ -114,7 +143,7 @@ CMakeFiles\BinaryTree.dir\clean:
 CMakeFiles\huffman_tree.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\huffman_tree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\huffman_tree.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=7,8 "Built target huffman_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=9,10 "Built target huffman_tree"
 .PHONY : CMakeFiles\huffman_tree.dir\all
 
 # Build rule for subdir invocation for target.
@@ -141,7 +170,7 @@ CMakeFiles\huffman_tree.dir\clean:
 CMakeFiles\test.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\test.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=11,12 "Built target test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=13,14 "Built target test"
 .PHONY : CMakeFiles\test.dir\all
 
 # Build rule for subdir invocation for target.
@@ -168,7 +197,7 @@ CMakeFiles\test.dir\clean:
 CMakeFiles\fstar.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\fstar.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\fstar.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=3,4 "Built target fstar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target fstar"
 .PHONY : CMakeFiles\fstar.dir\all
 
 # Build rule for subdir invocation for target.
@@ -195,7 +224,7 @@ CMakeFiles\fstar.dir\clean:
 CMakeFiles\greedy.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\greedy.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\greedy.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\greedy.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target greedy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=7,8 "Built target greedy"
 .PHONY : CMakeFiles\greedy.dir\all
 
 # Build rule for subdir invocation for target.
@@ -222,7 +251,7 @@ CMakeFiles\greedy.dir\clean:
 CMakeFiles\sort.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\sort.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\sort.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=9,10 "Built target sort"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="E:\BUPT-study\algorithm exp\cmake-build-debug\CMakeFiles" --progress-num=11,12 "Built target sort"
 .PHONY : CMakeFiles\sort.dir\all
 
 # Build rule for subdir invocation for target.

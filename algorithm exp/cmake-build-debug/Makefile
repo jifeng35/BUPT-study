@@ -59,17 +59,6 @@ CMAKE_BINARY_DIR = "E:\BUPT-study\algorithm exp\cmake-build-debug"
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	echo >nul && "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache\fast: rebuild_cache
-
-.PHONY : rebuild_cache\fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -80,6 +69,17 @@ edit_cache:
 edit_cache\fast: edit_cache
 
 .PHONY : edit_cache\fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	echo >nul && "E:\Program Files\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache\fast: rebuild_cache
+
+.PHONY : rebuild_cache\fast
 
 # The main all target
 all: cmake_check_build_system
@@ -112,6 +112,19 @@ preinstall\fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named Binary
+
+# Build rule for target.
+Binary: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) Binary
+.PHONY : Binary
+
+# fast build rule for target.
+Binary\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\build
+.PHONY : Binary\fast
 
 #=============================================================================
 # Target rules for targets named BinaryTree
@@ -217,6 +230,33 @@ BinaryTree.s: BinaryTree.cpp.s
 BinaryTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\BinaryTree.cpp.s
 .PHONY : BinaryTree.cpp.s
+
+Binary_Search_Tree.obj: Binary_Search_Tree.cpp.obj
+
+.PHONY : Binary_Search_Tree.obj
+
+# target to build an object file
+Binary_Search_Tree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\Binary_Search_Tree.cpp.obj
+.PHONY : Binary_Search_Tree.cpp.obj
+
+Binary_Search_Tree.i: Binary_Search_Tree.cpp.i
+
+.PHONY : Binary_Search_Tree.i
+
+# target to preprocess a source file
+Binary_Search_Tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\Binary_Search_Tree.cpp.i
+.PHONY : Binary_Search_Tree.cpp.i
+
+Binary_Search_Tree.s: Binary_Search_Tree.cpp.s
+
+.PHONY : Binary_Search_Tree.s
+
+# target to generate assembly for a file
+Binary_Search_Tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Binary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Binary.dir\Binary_Search_Tree.cpp.s
+.PHONY : Binary_Search_Tree.cpp.s
 
 Sort.obj: Sort.cpp.obj
 
@@ -361,6 +401,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Binary
 	@echo ... BinaryTree
 	@echo ... fstar
 	@echo ... greedy
@@ -370,6 +411,9 @@ help:
 	@echo ... BinaryTree.obj
 	@echo ... BinaryTree.i
 	@echo ... BinaryTree.s
+	@echo ... Binary_Search_Tree.obj
+	@echo ... Binary_Search_Tree.i
+	@echo ... Binary_Search_Tree.s
 	@echo ... Sort.obj
 	@echo ... Sort.i
 	@echo ... Sort.s
