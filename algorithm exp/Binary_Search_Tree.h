@@ -26,7 +26,8 @@ public:
     void Inorder_Traversal();
     void search(int val);
     void erase(int val);
-    void print(vector<int> a);
+    template<class T>
+    void print(vector<T> a);
     void insert(BS_Node**ptr,int val);
     //BS_Node * find_pos(int val);
     ~BS_Tree();
@@ -40,7 +41,30 @@ void BS_Tree::erase(int val) {
 
 }
 void BS_Tree::search(int val){
-
+    BS_Node*p=root;
+    bool change=false;
+    vector<char> a;
+    do{
+        change=false;
+        if (p->val == val) {
+            change=true;
+            break;
+        }
+        else if (p->val > val) {
+            a.emplace_back('l');
+            if(p->left) { p = p->left;change=true; }
+        } else if (p->val < val) {
+            a.emplace_back('r');
+            if(p->right) { p = p->right;change=true; }
+        }
+    }while(change);
+    if(change) {
+        cout << "it's on root's ";
+        print(a);
+    }
+    else{
+        cout<<"The number you have just found is not exist!"<<endl;
+    }
 }
 void BS_Tree::insert(BS_Node**ptr,int val){
     if(*ptr==NULL){
@@ -89,7 +113,8 @@ void BS_Tree::Inorder_Traversal(){//中序遍历
     }
     print(res);
 }
-void BS_Tree::print(vector<int> a){
+template<class T>
+void BS_Tree::print(vector<T> a){
     for(int i=0;i<a.size();i++){
         cout<<a[i]<<" ";
     }
