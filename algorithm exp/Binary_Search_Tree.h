@@ -15,30 +15,67 @@ struct BS_Node{
 };
 class BS_Tree{
 public:
-    BS_Tree(vector<int> a){
-        root=NULL;
-        BS_Node **ptr=&(root);
-        for(int i=0;i<a.size();i++){
-            insert(ptr,a[i]);
-        }
-    }
-    void createBSTree();
+    BS_Tree(vector<int> a);
     void Inorder_Traversal();
     void search(int val);
     void erase(int val);
     template<class T>
     void print(vector<T> a);
     void insert(BS_Node**ptr,int val);
-    //BS_Node * find_pos(int val);
+    BS_Node** get_root();
     ~BS_Tree();
 private:
     BS_Node*root;
 };
-void BS_Tree::createBSTree(){
-
+BS_Tree::BS_Tree(vector<int> a){
+        root=NULL;
+        BS_Node **ptr=&(root);
+        for(int i=0;i<a.size();i++){
+            insert(ptr,a[i]);
+        }
 }
 void BS_Tree::erase(int val) {
+    BS_Node*p=root;
+    bool change=false;
+    vector<char> a;
+    do{
+        change=false;
+        if (p->val == val) {
+            change=true;
+            break;
+        }
+        else if (p->val > val) {
+            a.emplace_back('l');
+            if(p->left) { p = p->left;change=true; }
+        } else if (p->val < val) {
+            a.emplace_back('r');
+            if(p->right) { p = p->right;change=true; }
+        }
+    }while(change);
+    if(change) {
+        if((!p->left)&&!p->right){
+            p=root;
+            for(int i=0;i<a.size()-1;i++){
+                if(a[i]=='r')
+                    p=p->right;
+                else
+                    p=p->left;
+            }
+            if(a[a.size()-1]=='r') { p->right = NULL; }
+            else { p->left = NULL; }
+            cout<<"Erase is complete!\t\tThe result is showed as follows: "<<endl;
+            Inorder_Traversal();
+        }
+        else if(p->right&&p->left){
 
+        }
+        else if(!p->left||!p->right){
+            if()
+        }
+    }
+    else{
+        cout<<"The number you wanna erase is not exist!"<<endl;
+    }
 }
 void BS_Tree::search(int val){
     BS_Node*p=root;
@@ -83,7 +120,6 @@ void BS_Tree::insert(BS_Node**ptr,int val){
         insert(&(*ptr)->left,val);
     }
 }
-//BS_Node *BS_Tree::find_pos(int val){}
 BS_Tree::~BS_Tree(){
 
 }
@@ -119,4 +155,7 @@ void BS_Tree::print(vector<T> a){
         cout<<a[i]<<" ";
     }
     cout<<endl;
+}
+BS_Node** BS_Tree::get_root(){
+    return &root;
 }
