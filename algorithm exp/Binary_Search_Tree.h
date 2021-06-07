@@ -9,7 +9,6 @@
 #include"exp.h"
 struct BS_Node{
     int val;
-    BS_Node *parent;
     BS_Node *left;
     BS_Node *right;
 };
