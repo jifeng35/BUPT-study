@@ -63,15 +63,31 @@ void BS_Tree::erase(int val) {
             }
             if(a[a.size()-1]=='r') { p->right = NULL; }
             else { p->left = NULL; }
-            cout<<"Erase is complete!\t\tThe result is showed as follows: "<<endl;
-            Inorder_Traversal();
-        }
-        else if(p->right&&p->left){
-
         }
         else if(!p->left||!p->right){
-            if()
+            if(!p->left){
+                p=root;
+                for(int i=0;i<a.size()-1;i++){
+                    if(a[i]=='r')
+                        p=p->right;
+                    else
+                        p=p->left;
+                }//要删除节点的父节点
+                p->right=p->right->right;
+            }
+            else{
+                p=root;
+                for(int i=0;i<a.size()-1;i++){
+                    if(a[i]=='r')
+                        p=p->right;
+                    else
+                        p=p->left;
+                }//要删除节点的父节点
+                p->left=p->left->left;
+                }
         }
+        cout<<"Erase is complete!\t\tThe result is showed as follows: "<<endl;
+        Inorder_Traversal();
     }
     else{
         cout<<"The number you wanna erase is not exist!"<<endl;
