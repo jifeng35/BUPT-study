@@ -8,5 +8,5 @@ int main(){
     BS_Tree test(a);
     test.Inorder_Traversal();
     test.search(12);
-    test.erase(53);
+    test.erase(45);
 }

@@ -17,6 +17,7 @@ class BS_Tree{
 public:
     BS_Tree(vector<int> a);
     void Inorder_Traversal();
+    void Inorder_Traversal(BS_Node*ptr,vector<char> a);
     void search(int val);
     void erase(int val);
     template<class T>
@@ -29,7 +30,7 @@ private:
 };
 BS_Tree::BS_Tree(vector<int> a){
         root=NULL;
-        BS_Node **ptr=&(root);
+    BS_Node **ptr=&(root);
         for(int i=0;i<a.size();i++){
             insert(ptr,a[i]);
         }
@@ -63,6 +64,9 @@ void BS_Tree::erase(int val) {
             }
             if(a[a.size()-1]=='r') { p->right = NULL; }
             else { p->left = NULL; }
+        }
+        else if(p->right&&p->left){
+            Inorder_Traversal(p,a);
         }
         else if(!p->left||!p->right){
             if(!p->left){
@@ -175,3 +179,45 @@ void BS_Tree::print(vector<T> a){
 BS_Node** BS_Tree::get_root(){
     return &root;
 }
+void BS_Tree::Inorder_Traversal(BS_Node*ptr,vector<char> a){
+    if (!ptr)
+    {
+        cout << "Your tree is empty!" << endl;
+        return;
+    }
+    stack<BS_Node*> temp;
+    temp.push(ptr);
+    vector<int> res;
+    BS_Node* p = ptr;
+    while (!temp.empty())
+    {
+        while ((p)&&(p->left))
+        {
+            p = p->left;
+            temp.push(p);
+        }
+        p = temp.top();
+        temp.pop();
+        res.emplace_back(p->val);
+        p = p->right;
+        if(p)
+            temp.push(p);
+    }
+    BS_Node **ptr1=&(root);
+    if(ptr==root){
+        root=NULL;
+    }
+    else{
+        ptr=root;
+        for(int i=0;i<a.size()-1;i++){
+            if(a[i]=='r')
+                p=p->right;
+            else
+                p=p->left;
+        }//要删除节点的父节点
+    }
+    for(int i=0;i<res.size();i++){
+        if(res[i]!=ptr->val)
+        insert(ptr1,res[i]);
+    }
+}//从给定点开始的中序遍历,并插入到数组中
