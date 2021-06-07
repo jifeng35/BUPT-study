@@ -141,7 +141,17 @@ void BS_Tree::insert(BS_Node**ptr,int val){
     }
 }
 BS_Tree::~BS_Tree(){
-
+    stack<BS_Node*>temp;
+    BS_Node*p=root;
+    temp.push(p);
+    while(!temp.empty()){
+        p=temp.top();
+        temp.pop();
+        if(p->right)temp.push(p->right);
+        if(p->left)temp.push(p->left);
+        delete p;
+    }
+    cout<<"RAM is recycled"<<endl;
 }
 void BS_Tree::Inorder_Traversal(){//中序遍历
     if (!root)

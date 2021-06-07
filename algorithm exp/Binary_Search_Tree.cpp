@@ -9,4 +9,5 @@ int main(){
     test.Inorder_Traversal();
     test.search(12);
     test.erase(45);
+    test.insert(test.get_root(),10);
 }
