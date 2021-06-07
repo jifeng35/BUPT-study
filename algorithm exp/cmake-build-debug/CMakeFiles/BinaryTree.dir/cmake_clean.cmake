@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "BinaryTree.exe.manifest"
   "BinaryTree.lib"
   "BinaryTree.pdb"
+  "CMakeFiles/BinaryTree.dir/BB_Tree.cpp.obj"
   "CMakeFiles/BinaryTree.dir/BinaryTree.cpp.obj"
 )
 

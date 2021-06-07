@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "E:/BUPT-study/algorithm exp/BB_Tree.cpp" "E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/BinaryTree.dir/BB_Tree.cpp.obj"
   "E:/BUPT-study/algorithm exp/BinaryTree.cpp" "E:/BUPT-study/algorithm exp/cmake-build-debug/CMakeFiles/BinaryTree.dir/BinaryTree.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")

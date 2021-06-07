@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.19)
 project(untitled1)
 set(CMAKE_CXX_STANDARD 14)
-add_executable(BinaryTree BinaryTree.cpp)
+add_executable(BinaryTree BinaryTree.cpp BB_Tree.cpp BB_Tree.h)
 add_executable(huffman_tree huffman_tree.cpp)
 add_executable(fstar fstar.h Fstar.cpp)
 add_executable(sort Sort.h Sort.cpp)
 add_executable(test test.h test.cpp)
 add_executable(greedy greedy.h greedy.cpp)
 add_executable(BS Binary_Search_Tree.h Binary_Search_Tree.cpp)
+add_executable(AVL BB_Tree.h BB_Tree.cpp BB_Tree.cpp BB_Tree.h)
 

@@ -204,6 +204,49 @@ BS\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BS.dir\build
 .PHONY : BS\fast
 
+#=============================================================================
+# Target rules for targets named AVL
+
+# Build rule for target.
+AVL: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) AVL
+.PHONY : AVL
+
+# fast build rule for target.
+AVL\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AVL.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AVL.dir\build
+.PHONY : AVL\fast
+
+BB_Tree.obj: BB_Tree.cpp.obj
+
+.PHONY : BB_Tree.obj
+
+# target to build an object file
+BB_Tree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\BB_Tree.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AVL.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AVL.dir\BB_Tree.cpp.obj
+.PHONY : BB_Tree.cpp.obj
+
+BB_Tree.i: BB_Tree.cpp.i
+
+.PHONY : BB_Tree.i
+
+# target to preprocess a source file
+BB_Tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\BB_Tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AVL.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AVL.dir\BB_Tree.cpp.i
+.PHONY : BB_Tree.cpp.i
+
+BB_Tree.s: BB_Tree.cpp.s
+
+.PHONY : BB_Tree.s
+
+# target to generate assembly for a file
+BB_Tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BinaryTree.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\BinaryTree.dir\BB_Tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AVL.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AVL.dir\BB_Tree.cpp.s
+.PHONY : BB_Tree.cpp.s
+
 BinaryTree.obj: BinaryTree.cpp.obj
 
 .PHONY : BinaryTree.obj
@@ -401,6 +444,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... AVL
 	@echo ... BS
 	@echo ... BinaryTree
 	@echo ... fstar
@@ -408,6 +452,9 @@ help:
 	@echo ... huffman_tree
 	@echo ... sort
 	@echo ... test
+	@echo ... BB_Tree.obj
+	@echo ... BB_Tree.i
+	@echo ... BB_Tree.s
 	@echo ... BinaryTree.obj
 	@echo ... BinaryTree.i
 	@echo ... BinaryTree.s

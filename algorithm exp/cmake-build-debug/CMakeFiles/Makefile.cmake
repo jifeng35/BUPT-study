@@ -54,4 +54,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/greedy.dir/DependInfo.cmake"
   "CMakeFiles/sort.dir/DependInfo.cmake"
   "CMakeFiles/BS.dir/DependInfo.cmake"
+  "CMakeFiles/AVL.dir/DependInfo.cmake"
   )
