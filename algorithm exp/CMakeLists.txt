@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(untitled1)
+project(算法实验)
 set(CMAKE_CXX_STANDARD 14)
 add_executable(BinaryTree BinaryTree.cpp BB_Tree.cpp BB_Tree.h)
 add_executable(huffman_tree huffman_tree.cpp)

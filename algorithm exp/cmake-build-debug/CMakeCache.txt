@@ -131,7 +131,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=untitled1
+CMAKE_PROJECT_NAME:STATIC=算法实验
 
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=D:/Windows Kits/10/bin/10.0.18362.0/x86/rc.exe
@@ -209,6 +209,12 @@ untitled1_BINARY_DIR:STATIC=E:/BUPT-study/algorithm exp/cmake-build-debug
 
 //Value Computed by CMake
 untitled1_SOURCE_DIR:STATIC=E:/BUPT-study/algorithm exp
+
+//Value Computed by CMake
+算法实验_BINARY_DIR:STATIC=E:/BUPT-study/algorithm exp/cmake-build-debug
+
+//Value Computed by CMake
+算法实验_SOURCE_DIR:STATIC=E:/BUPT-study/algorithm exp
 
 
 ########################
