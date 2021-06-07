@@ -215,6 +215,10 @@ void BS_Tree::Inorder_Traversal(BS_Node*ptr,vector<char> a){
             else
                 p=p->left;
         }//要删除节点的父节点
+        if(a[a.size()-1]=='l')
+            p->left=NULL;
+        else
+            p->right=NULL;
     }
     for(int i=0;i<res.size();i++){
         if(res[i]!=ptr->val)
