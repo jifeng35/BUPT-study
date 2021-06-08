@@ -21,12 +21,20 @@ public:
     void revolve(BB_Node*ptr);
     int Max_Depth(BB_Node*ptr);
     void insert(BB_Node **ptr,int val);
-    void Insert(BB_Node *ptr,int val);
+    void Insert(BB_Node **ptr,int val);
     BB_Node*find_parent(BB_Node*ptr);
+    void Update_BF();
     BB_Node*get_root();
-private:
+    void Inorder_Traversal();
     BB_Node*root;
 };
+template<class T>
+void print(vector<T> a){
+    for(int i=0;i<a.size();i++){
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+}
 BB_Node*BB_Tree::get_root(){
     return root;
 }
@@ -44,11 +52,23 @@ bool BB_Tree::judge_BF(BB_Node *ptr) {
         return false;
 }
 int BB_Tree::get_BF(BB_Node *ptr){
-    return Max_Depth(ptr->left)- Max_Depth(ptr->right);//左子树最大深度-右子树最大深度
+    if(!ptr)
+        return 0;
+    else if(ptr->left&&ptr->right)
+        return Max_Depth(ptr->left)- Max_Depth(ptr->right);//左子树最大深度-右子树最大深度
+    else if(ptr->right)
+        return - Max_Depth(ptr->right);
+    else if(ptr->left)
+        return Max_Depth(ptr->left);
+    else
+        return 0;
 }
 BB_Tree::BB_Tree(vector<int> a){
+    root=NULL;
     for(int i=0;i<a.size();i++){
-        Insert(get_root(),a[i]);
+        Update_BF();
+        Insert(&root,a[i]);
+        Update_BF();
     }
 }
 void BB_Tree::revolve(BB_Node *ptr){
@@ -89,21 +109,45 @@ void BB_Tree::revolve(BB_Node *ptr){
                 }
                 ptr->left->right=NULL; //将原"根节点"的左孩子的右指针清空
                 ptr->left=NULL;//将原"根节点"的左指针清空
-
             }
             break;
         case -2:
             //rr型调整
             if(ptr->right->right){
-
+                ptr->right->left=ptr;
+                if(ptr_p){
+                    if(ptr_p->val>ptr->val){
+                        ptr_p->left=ptr->right;
+                    }
+                    else{
+                        ptr_p->right=ptr->right;
+                    }
+                }
+                else{
+                    root=ptr->right;
+                }
+                ptr->right=NULL;
             }
             //rl型调整
             else if(ptr->right->left){
-
+                ptr->right->left->left=ptr;
+                ptr->right->left->right=ptr->right;
+                if(ptr_p){
+                    if(ptr_p->val>ptr->val){
+                        ptr_p->left=ptr->right->left;
+                    }
+                    else{
+                        ptr_p->right=ptr->right->left;
+                    }
+                }
+                else{
+                    root=ptr->right->left;
+                }
+                ptr->right->left=NULL;
+                ptr->right=NULL;
             }
             break;
     }
-
 }
 void BB_Tree::insert(BB_Node **ptr,int val){
     if(*ptr==NULL){
@@ -121,11 +165,11 @@ void BB_Tree::insert(BB_Node **ptr,int val){
         insert(&(*ptr)->left,val);
     }
 }
-void BB_Tree::Insert(BB_Node *ptr,int val){//一次只能通过旋转纠正一个错误
-    insert(&ptr,val);
+void BB_Tree::Insert(BB_Node **ptr,int val){//一次只能通过旋转纠正一个错误
+    insert(ptr,val);
     stack<BB_Node *>temp;
-    temp.push(ptr);
-    BB_Node *p=ptr;
+    temp.push(*ptr);
+    BB_Node *p=*ptr;
     BB_Node *te=NULL;
     int Max=0;
     while(!temp.empty()){
@@ -174,3 +218,44 @@ BB_Node*BB_Tree::find_parent(BB_Node *ptr) {//此处假定*ptr一定存在于树
         return p;
     }
 }
+void BB_Tree::Inorder_Traversal(){//中序遍历
+    if (!root)
+    {
+        cout << "Your tree is empty!" << endl;
+        return;
+    }
+    stack<BB_Node*> temp;
+    temp.push(root);
+    vector<int> res;
+    BB_Node* p = root;
+    while (!temp.empty())
+    {
+        while ((p)&&(p->left))
+        {
+            p = p->left;
+            temp.push(p);
+        }
+        p = temp.top();
+        temp.pop();
+        res.emplace_back(p->val);
+        p = p->right;
+        if(p)
+            temp.push(p);
+    }
+    print(res);
+}
+void BB_Tree::Update_BF(){
+    if(!root)
+        return;
+    stack<BB_Node*> temp;
+    temp.push(root);
+    BB_Node*ptr=root;
+    while(!temp.empty()){
+        ptr=temp.top();
+        ptr->BF= get_BF(ptr);
+        temp.pop();
+        if(ptr->right)temp.push(ptr->right);
+        if(ptr->left)temp.push(ptr->left);
+    }
+}
+

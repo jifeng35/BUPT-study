@@ -3,3 +3,8 @@
 //
 
 #include "BB_Tree.h"
+int main(){
+    vector<int> a={1,2,3,4,5};
+    BB_Tree test(a);
+    test.Inorder_Traversal();
+}
