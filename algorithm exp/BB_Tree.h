@@ -66,9 +66,7 @@ int BB_Tree::get_BF(BB_Node *ptr){
 BB_Tree::BB_Tree(vector<int> a){
     root=NULL;
     for(int i=0;i<a.size();i++){
-        Update_BF();
         Insert(&root,a[i]);
-        Update_BF();
     }
 }
 void BB_Tree::revolve(BB_Node *ptr){
@@ -167,6 +165,7 @@ void BB_Tree::insert(BB_Node **ptr,int val){
 }
 void BB_Tree::Insert(BB_Node **ptr,int val){//一次只能通过旋转纠正一个错误
     insert(ptr,val);
+    Update_BF();
     stack<BB_Node *>temp;
     temp.push(*ptr);
     BB_Node *p=*ptr;
