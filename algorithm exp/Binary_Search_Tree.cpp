@@ -10,4 +10,6 @@ int main(){
     test.search(12);
     test.erase(45);
     test.insert(test.get_root(),10);
+    test.insert(test.get_root(),55);
+    test.Inorder_Traversal();
 }
