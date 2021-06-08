@@ -22,6 +22,7 @@ public:
     int Max_Depth(BB_Node*ptr);
     void insert(BB_Node **ptr,int val);
     void Insert(BB_Node *ptr,int val);
+    BB_Node*find_parent(BB_Node*ptr);
     BB_Node*get_root();
 private:
     BB_Node*root;
@@ -51,14 +52,43 @@ BB_Tree::BB_Tree(vector<int> a){
     }
 }
 void BB_Tree::revolve(BB_Node *ptr){
+    BB_Node *ptr_p=find_parent(ptr);
     switch(ptr->BF) {
         case 2:
             //ll型调整
             if(ptr->left->left){
-
+                ptr->left->right=ptr;
+                if(ptr_p){//说明ptr不为根节点
+                    if(ptr_p->val>ptr->val){
+                        ptr_p->left=ptr->left;
+                    }
+                    else{
+                        ptr_p->right=ptr->left;
+                    }
+                }
+                else{
+                    root=ptr->left;
+                }
+                ptr->left=NULL;
             }
             //lr型调整
             else if(ptr->left->right){
+                ptr->left->right->right=ptr;
+                ptr->left->right->left=ptr->left;
+                //将新的"根节点"连需要连的节点
+                if(ptr_p){
+                    if(ptr_p->val>ptr->val){
+                        ptr_p->left=ptr->left->right;
+                    }
+                    else{
+                        ptr_p->right=ptr->left->right;
+                    }
+                }//将原父节点指向新的局部根节点
+                else{
+                    root=ptr->left->right;
+                }
+                ptr->left->right=NULL; //将原"根节点"的左孩子的右指针清空
+                ptr->left=NULL;//将原"根节点"的左指针清空
 
             }
             break;
@@ -111,4 +141,36 @@ void BB_Tree::Insert(BB_Node *ptr,int val){//一次只能通过旋转纠正一�
         revolve(te);
     else
         return;
+}
+BB_Node*BB_Tree::find_parent(BB_Node *ptr) {//此处假定*ptr一定存在于树中,若传入指针为根节点,则返回NULL
+    if(ptr==root)
+        return NULL;
+    BB_Node *p=root;
+    int val=ptr->val;
+    vector<char> a;
+    bool change;
+    do{
+        change=false;
+        if (p->val == val) {
+            change=true;
+            break;
+        }
+        else if (p->val > val) {
+            a.emplace_back('l');
+            if(p->left) { p = p->left;change=true; }
+        } else if (p->val < val) {
+            a.emplace_back('r');
+            if(p->right) { p = p->right;change=true; }
+        }
+    }while(change);
+    if(change){
+        p=root;
+        for(int i=0;i<a.size()-1;i++){
+            if(a[i]=='r')
+                p=p->right;
+            else
+                p=p->left;
+        }
+        return p;
+    }
 }
