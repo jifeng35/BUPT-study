@@ -4,7 +4,10 @@
 
 #include "BB_Tree.h"
 int main(){
-    vector<int> a={1,2,3,4,5};
+    vector<int> a={1,2,3,4,5,6,7};
     BB_Tree test(a);
-    test.Inorder_Traversal();//æ”¹æ—‹è½¬å‡½æ•°
+    test.Level_Traversal();//¸ÄÐý×ªº¯Êý
+    test.search(4);
+    test.erase(test,4,'a');
+    test.Level_Traversal();//¸ÄÐý×ªº¯Êý
 }
