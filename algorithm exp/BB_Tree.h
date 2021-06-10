@@ -72,6 +72,7 @@ int BB_Tree::get_BF(BB_Node *ptr){
         return 0;
 }
 BB_Tree::BB_Tree(vector<int> a){
+    sort(a.begin(),a.end());
     root=NULL;
     temp=a;
     for(int i=0;i<a.size();i++){
